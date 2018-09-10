@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo swapoff && sudo swapon
+sudo swapoff -a && sudo swapon -a
