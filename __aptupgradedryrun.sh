@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo apt-get update && sudo apt-get --dry-run dist-upgrade 
+sudo apt update && sudo apt --dry-run -y dist-upgrade 
