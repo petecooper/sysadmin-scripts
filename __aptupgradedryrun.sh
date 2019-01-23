@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo apt update && sudo apt --dry-run -y dist-upgrade 
+sudo apt update -o Acquire::http::AllowRedirect=false && sudo apt --dry-run -o Acquire::http::AllowRedirect=false -y dist-upgrade 
