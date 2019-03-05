@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo nginx -t && sudo systemctl restart nginx
+sudo nginx -t && sudo systemctl reload nginx
