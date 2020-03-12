@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo /opt/certbot/certbot-auto --dry-run renew
+sudo /opt/certbot/certbot-auto renew --config-dir /etc/certbot/ --dry-run
