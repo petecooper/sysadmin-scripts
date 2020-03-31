@@ -33,7 +33,7 @@ echo -e "==> Checking for PHP 7.3..."
 /etc/php/7.3/sbin/php-fpm -v &> /dev/null
 if [ $? -eq 0 ]
 then
-  $php73ver=$(/etc/php/7.3/bin/php -r 'echo PHP_VERSION;')
+  php73ver=$(/etc/php/7.3/bin/php -r 'echo PHP_VERSION;')
   echo -e "Yes" $php73ver
 else
   echo -e "No"
