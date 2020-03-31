@@ -1,5 +1,5 @@
 #!/bin/bash
-php73 -v
+/etc/php/7.3/sbin/php-fpm -v
 if [ $? -eq 0 ]
 then
   echo "Y"
