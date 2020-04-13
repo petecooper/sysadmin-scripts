@@ -1,7 +1,9 @@
 #!/bin/bash
-rm -rf ~/php7.2-source.tar.gz
-rm -rf ~/php7.2-source/
-rm -rf ~/php7.3-source.tar.gz
-rm -rf ~/php7.3-source/
-rm -rf ~/php7.4-source.tar.gz
-rm -rf ~/php7.4-source/
+rm -rf ~/php72-source.tar.gz
+rm -rf ~/php72-source/
+rm -rf ~/php73-source.tar.gz
+rm -rf ~/php73-source/
+rm -rf ~/php74-source.tar.gz
+rm -rf ~/php74-source/
+rm -rf ~/php-src-source.tar.gz
+rm -rf ~/php-src-source/
