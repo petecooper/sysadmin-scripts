@@ -8,4 +8,4 @@ echo 'Approximate system RAM (GB): '$(grep MemTotal /proc/meminfo | awk '{print 
 && sudo sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab' \
 && echo -e '****************************************' \
 && echo -e '* Swapfile created. Reboot to confirm. *' \
-&& echo -e '****************************************' \
+&& echo -e '****************************************'
