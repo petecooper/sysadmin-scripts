@@ -1,3 +1,3 @@
 #!/bin/bash
-sudo swapoff -a \
-&& sudo swapon -as
+sudo swapoff \
+&& sudo swapon -show
