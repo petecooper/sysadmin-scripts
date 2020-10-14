@@ -5,5 +5,5 @@ sudo nginx -t \
 && while read site; \
 do printf "$site" \
 && printf ": " \
-&& curl -Is https://"$site" | grep "^HTTP" | cat; \
+&& curl -Is --cert-status https://"$site" | grep "^HTTP" | cat; \
 done < /var/www/sites/sites.txt
