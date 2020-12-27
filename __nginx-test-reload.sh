@@ -1,2 +1,3 @@
 #!/bin/bash
-sudo nginx -t && sudo systemctl reload nginx
+sudo nginx -t \
+&& sudo systemctl reload nginx
