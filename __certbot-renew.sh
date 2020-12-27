@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo /opt/certbot/certbot-auto renew --config-dir /etc/certbot/
+sudo /opt/certbot/certbot renew --config-dir /etc/certbot/
