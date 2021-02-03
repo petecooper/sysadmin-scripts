@@ -2,7 +2,7 @@
 /usr/local/bin/php -v &> /dev/null
 if [ $? -eq 0 ]
 then
-  echo -e "\`php\`: PHP "$(/usr/local/bin/php -r 'echo PHP_VERSION;')
+  echo -e "symlink: PHP "$(/usr/local/bin/php -r 'echo PHP_VERSION;')
 fi
 /etc/php/7.0/sbin/php-fpm -v &> /dev/null
 if [ $? -eq 0 ]
