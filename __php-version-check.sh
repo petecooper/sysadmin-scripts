@@ -23,6 +23,7 @@ fi
 if [ $? -eq 0 ]
 then
   echo -e "Found: PHP "$(/etc/php/7.4/bin/php -r 'echo PHP_VERSION;')" (EOL: 28 Nov 2022)"
+  echo -e "SSL:" $(/etc/php/7.4/bin/php -r 'echo OPENSSL_VERSION_TEXT;')
 fi
 /etc/php/8.0/sbin/php-fpm -v &> /dev/null
 if [ $? -eq 0 ]
