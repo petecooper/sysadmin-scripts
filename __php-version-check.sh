@@ -37,5 +37,5 @@ fi
 /usr/local/bin/php -v &> /dev/null
 if [ $? -eq 0 ]
 then
-  echo -e "symlink set"
+  echo -e "symlink: "$(/usr/local/bin/php -r 'echo PHP_VERSION;')
 fi
