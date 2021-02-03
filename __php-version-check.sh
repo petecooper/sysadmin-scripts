@@ -34,8 +34,8 @@ if [ $? -eq 0 ]
 then
   echo -e "PHP "$(/etc/php/php-src/bin/php -r 'echo PHP_VERSION;')" installed (php-src binary)"
 fi
-/usr/bin/php -v &> /dev/null
+/usr/local/bin/php -v &> /dev/null
 if [ $? -eq 0 ]
 then
-  echo -e "PHP "$(/usr/bin/php -r 'echo PHP_VERSION;')" set up as `php` symlink"
+  echo -e "PHP "$(/usr/local/bin/php -r 'echo PHP_VERSION;')" set up as `php` symlink"
 fi
