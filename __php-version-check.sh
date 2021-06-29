@@ -40,6 +40,12 @@ then
   echo -e "\n8.0 CLI: PHP "$(/etc/php/8.0/bin/php -r 'echo PHP_VERSION;')
   echo -e "8.0 SSL:" $(/etc/php/8.0/bin/php -r 'echo OPENSSL_VERSION_TEXT;')
 fi
+/etc/php/8.1/sbin/php-fpm -v &> /dev/null
+if [ $? -eq 0 ]
+then
+  echo -e "\n8.1 CLI: PHP "$(/etc/php/8.1/bin/php -r 'echo PHP_VERSION;')
+  echo -e "8.1 SSL:" $(/etc/php/8.1/bin/php -r 'echo OPENSSL_VERSION_TEXT;')
+fi
 /etc/php/php-src/sbin/php-fpm -v &> /dev/null
 if [ $? -eq 0 ]
 then
