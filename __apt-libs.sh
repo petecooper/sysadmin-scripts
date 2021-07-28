@@ -11,6 +11,7 @@ certbot \
 cmake \
 cmake-data \
 cpulimit \
+debian-goodies \
 doxygen \
 git \
 glances \
