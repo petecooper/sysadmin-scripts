@@ -32,6 +32,7 @@ fi
 if [ $? -eq 0 ]
 then
   echo -e "\n7.4 PHP CLI: PHP "$(/etc/php/7.4/bin/php -r 'echo PHP_VERSION;')
+  echo -e "\n7.4 PHP-FPM CLI: PHP "$(/etc/php/7.4/sbin/php-fpm -r 'echo PHP_VERSION;')
   echo -e "7.4 SSL:" $(/etc/php/7.4/bin/php -r 'echo OPENSSL_VERSION_TEXT;')
 fi
 /etc/php/8.0/sbin/php-fpm -v &> /dev/null
