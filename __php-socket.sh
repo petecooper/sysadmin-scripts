@@ -5,7 +5,7 @@ if [ -S "/var/run/php/php-fpm74.sock" ]; then
     egrep -lir "php-fpm74.sock" /etc/nginx/servers-available/ | sort | sed -i -e 's/^/  /'
   fi
   if [ -d "/etc/nginx/sites-available/" ]; then
-    egrep -lir "php-fpm74.sock" /etc/nginx/sites-available/ | sort
+    egrep -lir "php-fpm74.sock" /etc/nginx/sites-available/ | sort | sed -i -e 's/^/  /'
   fi
 fi
 if [ -S "/var/run/php/php-fpm80.sock" ]; then
