@@ -4,7 +4,7 @@ echo 'Approximate system RAM (GB): '$(grep MemTotal /proc/meminfo | awk '{print 
 && sudo fallocate -l $swapfilesize /swapfile \
 && sudo chmod 600 /swapfile \
 && sudo mkswap /swapfile \
-&& sudo swapon /swapfile \
+&& sudo swapon /swapfile --show \
 && sudo sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab' \
 && echo -e '**********************************' \
 && echo -e '* Swapfile created. Rebooting... *' \
