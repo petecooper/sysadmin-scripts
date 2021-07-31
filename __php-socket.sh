@@ -2,7 +2,7 @@
 if [ -S "/var/run/php/php-fpm74.sock" ]; then
   echo -e "Found PHP 7.4 socket at \`/var/run/php/php-fpm74.sock\`."
   if [ -d "/etc/nginx/servers-available/" ]; then
-    egrep -lir "php-fpm74.sock" /etc/nginx/servers-available/ | sort
+    egrep -lir "php-fpm74.sock" /etc/nginx/servers-available/ | sort | sed -i -e 's/^/  /'
   fi
   if [ -d "/etc/nginx/sites-available/" ]; then
     egrep -lir "php-fpm74.sock" /etc/nginx/sites-available/ | sort
