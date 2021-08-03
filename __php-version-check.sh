@@ -31,10 +31,10 @@ fi
 /etc/php/7.3/sbin/php-fpm -v &> /dev/null
 if [ $? -eq 0 ]
 then
-  echo -e "\n7.3     PHP CLI: PHP "$(/etc/php/7.3/bin/php -r 'echo PHP_VERSION;')
-  echo -e "7.3 PHP-FPM CLI: PHP "$(/etc/php/7.3/sbin/php-fpm -i | grep "PHP Version" | head -1 | sed 's/.*=> //')
-  echo -e "7.3 PHP CLI SSL:" $(/etc/php/7.3/bin/php -r 'echo OPENSSL_VERSION_TEXT;')
-  echo -e "7.3 PHP-FPM SSL:" $(/etc/php/7.3/sbin/php-fpm -i | grep "OpenSSL Library Version" | sed 's/.*=> //')
+  echo -e "\n7.3     php CLI: PHP "$(/etc/php/7.3/bin/php -r 'echo PHP_VERSION;')
+  echo -e "7.3 php-fpm CLI: PHP "$(/etc/php/7.3/sbin/php-fpm -i | grep "PHP Version" | head -1 | sed 's/.*=> //')
+  echo -e "7.3 php CLI SSL:" $(/etc/php/7.3/bin/php -r 'echo OPENSSL_VERSION_TEXT;')
+  echo -e "7.3 php-fpm SSL:" $(/etc/php/7.3/sbin/php-fpm -i | grep "OpenSSL Library Version" | sed 's/.*=> //')
 fi
 /etc/php/7.4/sbin/php-fpm -v &> /dev/null
 if [ $? -eq 0 ]
