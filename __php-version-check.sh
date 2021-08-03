@@ -55,11 +55,12 @@ fi
 /etc/php/8.1/sbin/php-fpm -v &> /dev/null
 if [ $? -eq 0 ]
 then
-  echo -e "\n8.1     PHP CLI: PHP "$(/etc/php/8.1/bin/php -r 'echo PHP_VERSION;')
-  echo -e "8.1 PHP-FPM CLI: PHP "$(/etc/php/8.1/sbin/php-fpm -i | grep "PHP Version" | head -1 | sed 's/.*=> //')
-  echo -e "8.1 PHP CLI SSL:" $(/etc/php/8.1/bin/php -r 'echo OPENSSL_VERSION_TEXT;')
-  echo -e "8.1 PHP-FPM SSL:" $(/etc/php/8.1/sbin/php-fpm -i | grep "OpenSSL Library Version" | sed 's/.*=> //')
-  echo -e "8.1 Socket Test:" $(curl -s 'http://127.0.0.1:881/php-fpm-ver.php')
+  echo -e "\n8.1     php CLI: PHP "$(/etc/php/8.1/bin/php -r 'echo PHP_VERSION;')
+  echo -e "8.1 php-fpm CLI: PHP "$(/etc/php/8.1/sbin/php-fpm -i | grep "PHP Version" | head -1 | sed 's/.*=> //')
+  echo -e "8.1 socket test:" $(curl -s 'http://127.0.0.1:881/php-fpm-ver.php')
+  echo -e "8.1 php CLI SSL:" $(/etc/php/8.1/bin/php -r 'echo OPENSSL_VERSION_TEXT;')
+  echo -e "8.1 php-fpm SSL:" $(/etc/php/8.1/sbin/php-fpm -i | grep "OpenSSL Library Version" | sed 's/.*=> //')
+
 fi
 /etc/php/php-src/sbin/php-fpm -v &> /dev/null
 if [ $? -eq 0 ]
