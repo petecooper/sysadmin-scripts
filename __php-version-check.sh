@@ -67,8 +67,8 @@ fi
 /etc/php/php-src/sbin/php-fpm -v &> /dev/null
 if [ $? -eq 0 ]
 then
-  echo -e "\nsrc     PHP CLI: PHP "$(/etc/php/php-src/bin/php -r 'echo PHP_VERSION;')
-  echo -e "src PHP-FPM CLI: PHP "$(/etc/php/php-src/sbin/php-fpm -i | grep "PHP Version" | head -1 | sed 's/.*=> //')
-  echo -e "src PHP CLI SSL:" $(/etc/php/php-src/bin/php -r 'echo OPENSSL_VERSION_TEXT;')
-  echo -e "src PHP-FPM SSL:" $(/etc/php/php-src/sbin/php-fpm -i | grep "OpenSSL Library Version" | sed 's/.*=> //')
+  echo -e "\nsrc     php CLI: PHP "$(/etc/php/php-src/bin/php -r 'echo PHP_VERSION;')
+  echo -e "src php-fpm CLI: PHP "$(/etc/php/php-src/sbin/php-fpm -i | grep "PHP Version" | head -1 | sed 's/.*=> //')
+  echo -e "src php CLI SSL:" $(/etc/php/php-src/bin/php -r 'echo OPENSSL_VERSION_TEXT;')
+  echo -e "src php-fpm SSL:" $(/etc/php/php-src/sbin/php-fpm -i | grep "OpenSSL Library Version" | sed 's/.*=> //')
 fi
