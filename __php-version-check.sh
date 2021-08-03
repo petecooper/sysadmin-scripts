@@ -59,6 +59,7 @@ then
   echo -e "8.1 PHP-FPM CLI: PHP "$(/etc/php/8.1/sbin/php-fpm -i | grep "PHP Version" | head -1 | sed 's/.*=> //')
   echo -e "8.1 PHP CLI SSL:" $(/etc/php/8.1/bin/php -r 'echo OPENSSL_VERSION_TEXT;')
   echo -e "8.1 PHP-FPM SSL:" $(/etc/php/8.1/sbin/php-fpm -i | grep "OpenSSL Library Version" | sed 's/.*=> //')
+  echo -e "8.1 Socket Test:" $(curl -s 'http://127.0.0.1:881/php-fpm-ver.php')
 fi
 /etc/php/php-src/sbin/php-fpm -v &> /dev/null
 if [ $? -eq 0 ]
