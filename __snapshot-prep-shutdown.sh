@@ -6,5 +6,5 @@ sudo apt update \
 && sudo apt -y clean \
 && sudo swapoff -a \
 && sudo sed -i '/swapfile/d' /etc/fstab \
-&& sudo rm -f /swapfile
+&& sudo rm -f /swapfile \
 && sudo shutdown -h now
