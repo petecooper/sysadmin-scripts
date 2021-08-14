@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo service php*fpm reload
+sudo service php*fpm.service reload

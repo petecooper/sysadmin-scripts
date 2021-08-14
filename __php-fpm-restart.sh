@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo service php*fpm restart
+sudo service php*fpm.service restart
