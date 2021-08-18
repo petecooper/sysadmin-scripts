@@ -1,4 +1,4 @@
 #!/bin/bash
 sudo systemctl stop nginx \
-&& sleep 3 \
+&& sleep 2 \
 && sudo systemctl start nginx
