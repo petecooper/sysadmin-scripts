@@ -17,8 +17,8 @@ git \
 glances \
 imagemagick \
 libaio-dev \
+libargon2-dev \
 libatomic-ops-dev \
-libargon2-0-dev \
 libbison-dev \
 libboost-all-dev \
 libbpfcc-dev \
@@ -29,6 +29,7 @@ libelf-dev \
 libfreetype6-dev \
 libgd-dev \
 libgeoip-dev \
+libheif-dev \
 libipmimonitoring-dev \
 libjemalloc-dev \
 libjson-c-dev \
