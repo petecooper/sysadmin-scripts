@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo nginx -t \
+sudo /usr/sbin/nginx -t \
 && sudo /usr/sbin/nginx -s reload \
 && while read site; \
 do printf "$site" \
