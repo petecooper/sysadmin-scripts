@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo nginx -t \
-&& sudo systemctl reload nginx \
+&& sudo /usr/sbin/nginx -s reload \
 && while read site; \
 do printf "$site" \
 && printf ": " \
