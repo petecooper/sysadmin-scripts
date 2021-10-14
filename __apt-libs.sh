@@ -34,12 +34,10 @@ libfreetype6-dev \
 libgd-dev \
 libgeoip-dev \
 libgif-dev \
-libgif-dev \
 libgoogle-perftools-dev \
 libheif-dev \
 libipmimonitoring-dev \
 libjemalloc-dev \
-libjpeg-dev \
 libjpeg-dev \
 libjson-c-dev \
 libmnl-dev \
