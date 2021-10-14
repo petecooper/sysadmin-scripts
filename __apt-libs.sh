@@ -22,6 +22,7 @@ libatomic-ops-dev \
 libbison-dev \
 libboost-all-dev \
 libbpfcc-dev \
+libbrotli-dev \
 libbsd-dev \
 libbz2-dev \
 libcurl4-openssl-dev \
