@@ -8,11 +8,14 @@ autotools-dev \
 bison \
 build-essential \
 certbot \
+clang \
 cmake \
 cmake-data \
 cpulimit \
 debian-goodies \
 doxygen \
+extra-cmake-modules \
+g++ \
 git \
 glances \
 imagemagick \
@@ -31,9 +34,12 @@ libfreetype6-dev \
 libgd-dev \
 libgeoip-dev \
 libgif-dev \
+libgif-dev \
+libgoogle-perftools-dev \
 libheif-dev \
 libipmimonitoring-dev \
 libjemalloc-dev \
+libjpeg-dev \
 libjpeg-dev \
 libjson-c-dev \
 libmnl-dev \
@@ -67,6 +73,7 @@ moreutils \
 multitail \
 nasm \
 net-tools \
+ninja-build \
 pigz \
 pkg-config \
 re2c \
@@ -78,4 +85,5 @@ uuid-dev \
 virtualenv \
 yasm \
 zip \
-zlib1g-dev
+zlib1g-dev \
+&& echo 'Done.'
