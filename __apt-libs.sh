@@ -29,15 +29,19 @@ libelf-dev \
 libfreetype6-dev \
 libgd-dev \
 libgeoip-dev \
+libgif-dev \
 libheif-dev \
 libipmimonitoring-dev \
 libjemalloc-dev \
+libjpeg-dev \
 libjson-c-dev \
 libmnl-dev \
 libncurses-dev \
 libnetfilter-acct-dev \
 libonig-dev \
+libopenexr-dev \
 libpcre3-dev \
+libpng-dev \
 libprotobuf-dev \
 libreadline-dev \
 librtmp-dev \
@@ -60,14 +64,17 @@ mailutils \
 make \
 moreutils \
 multitail \
+nasm \
 net-tools \
 pigz \
 pkg-config \
 re2c \
+ruby-full \
 subversion \
 tree \
 unzip \
 uuid-dev \
 virtualenv \
+yasm \
 zip \
 zlib1g-dev
