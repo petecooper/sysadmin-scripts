@@ -76,6 +76,7 @@ pigz \
 pkg-config \
 re2c \
 ruby-full \
+sqlite3 \
 subversion \
 tree \
 unzip \
