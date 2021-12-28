@@ -16,7 +16,6 @@ debian-goodies \
 doxygen \
 extra-cmake-modules \
 g++ \
-git \
 glances \
 imagemagick \
 libaio-dev \
@@ -45,7 +44,7 @@ libncurses-dev \
 libnetfilter-acct-dev \
 libonig-dev \
 libopenexr-dev \
-libpcre3-dev \
+libpcre2-dev \
 libpng-dev \
 libprotobuf-dev \
 libreadline-dev \
@@ -74,7 +73,9 @@ net-tools \
 ninja-build \
 pigz \
 pkg-config \
+postgresql \
 re2c \
+redis \
 ruby-full \
 sqlite3 \
 subversion \
