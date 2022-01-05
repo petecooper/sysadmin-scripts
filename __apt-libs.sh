@@ -44,7 +44,7 @@ libncurses-dev \
 libnetfilter-acct-dev \
 libonig-dev \
 libopenexr-dev \
-libpcre2-dev \
+libpcre3-dev \
 libpng-dev \
 libprotobuf-dev \
 libreadline-dev \
@@ -71,6 +71,7 @@ multitail \
 nasm \
 net-tools \
 ninja-build \
+pcre3 \
 pigz \
 pkg-config \
 postgresql \
