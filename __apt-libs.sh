@@ -71,7 +71,6 @@ multitail \
 nasm \
 net-tools \
 ninja-build \
-pcre3 \
 pigz \
 pkg-config \
 postgresql \
