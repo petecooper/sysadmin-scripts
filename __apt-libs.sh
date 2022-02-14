@@ -39,6 +39,7 @@ libipmimonitoring-dev \
 libjemalloc-dev \
 libjpeg-dev \
 libjson-c-dev \
+liblz4-dev \
 libmnl-dev \
 libncurses-dev \
 libnetfilter-acct-dev \
