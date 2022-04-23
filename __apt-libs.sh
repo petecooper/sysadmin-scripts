@@ -96,6 +96,9 @@ zlib1g-dev \
 sudo apt install -y \
 libavif-dev \
 libyuv-dev \
+&& sudo apt purge -y \
+snapd \
+&& sudo systemctl daemon-reload \
 ; fi \
 && sudo apt -y clean \
 && sudo apt -y autoclean \
