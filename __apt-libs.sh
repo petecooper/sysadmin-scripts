@@ -19,6 +19,7 @@ g++ \
 glances \
 imagemagick \
 libaio-dev \
+libaom-dev \
 libargon2-dev \
 libatomic-ops-dev \
 libbison-dev \
@@ -57,6 +58,7 @@ libssl-dev \
 libtirpc-dev \
 libtool \
 libuv1-dev \
+libvips-dev \
 libwebp-dev \
 libxen-dev \
 libxslt1-dev \
@@ -72,6 +74,7 @@ multitail \
 nasm \
 net-tools \
 ninja-build \
+num-utils \
 pigz \
 pkg-config \
 postgresql \
@@ -87,4 +90,14 @@ virtualenv \
 yasm \
 zip \
 zlib1g-dev \
+&& if \
+[[ $(lsb_release -sc) = "jammy" ]] \
+; then \
+sudo apt install -y \
+libavif-dev \
+libyuv-dev \
+; fi \
+&& sudo apt -y clean \
+&& sudo apt -y autoclean \
+&& sudo apt -y autoremove \
 && echo 'Done.'
