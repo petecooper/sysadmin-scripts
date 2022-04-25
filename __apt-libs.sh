@@ -33,6 +33,7 @@ libelf-dev \
 libfreetype6-dev \
 libgd-dev \
 libgeoip-dev \
+libgflags-dev \
 libgif-dev \
 libgoogle-perftools-dev \
 libheif-dev \
