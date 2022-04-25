@@ -58,7 +58,9 @@ libssl-dev \
 libtirpc-dev \
 libtool \
 libuv1-dev \
+libprotobuf-dev \
 libwebp-dev \
+libwebsockets-dev \
 libxen-dev \
 libxslt1-dev \
 libyajl-dev \
