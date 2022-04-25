@@ -58,7 +58,6 @@ libssl-dev \
 libtirpc-dev \
 libtool \
 libuv1-dev \
-libvips-dev \
 libwebp-dev \
 libxen-dev \
 libxslt1-dev \
@@ -90,15 +89,19 @@ virtualenv \
 yasm \
 zip \
 zlib1g-dev \
+zsh \
+&& if \
+[[ $(lsb_release -sc) = "focal" ]] \
+; then \
+sudo apt install -y \
+libvips-dev \
+; fi \
 && if \
 [[ $(lsb_release -sc) = "jammy" ]] \
 ; then \
 sudo apt install -y \
 libavif-dev \
 libyuv-dev \
-&& sudo apt purge -y \
-snapd \
-&& sudo systemctl daemon-reload \
 ; fi \
 && sudo apt -y clean \
 && sudo apt -y autoclean \
