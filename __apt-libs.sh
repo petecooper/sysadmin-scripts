@@ -32,6 +32,8 @@ libcurl4-openssl-dev \
 libelf-dev \
 libfreetype6-dev \
 libgd-dev \
+libgd-ocaml-dev \
+libgeoip-dev \
 libgeoip-dev \
 libgflags-dev \
 libgif-dev \
@@ -48,6 +50,7 @@ libnetfilter-acct-dev \
 libonig-dev \
 libopenexr-dev \
 libpcre3-dev \
+libperl-dev \
 libpng-dev \
 libprotobuf-dev \
 libreadline-dev \
@@ -58,8 +61,9 @@ libsqlite3-dev \
 libssl-dev \
 libtirpc-dev \
 libtool \
+libunwind-dev \
 libuv1-dev \
-libprotobuf-dev \
+libvips-dev \
 libwebp-dev \
 libwebsockets-dev \
 libxen-dev \
@@ -77,9 +81,9 @@ nasm \
 net-tools \
 ninja-build \
 num-utils \
+p7zip-full \
 pigz \
 pkg-config \
-postgresql \
 re2c \
 redis \
 ruby-full \
@@ -93,19 +97,6 @@ yasm \
 zip \
 zlib1g-dev \
 zsh \
-&& if \
-[[ $(lsb_release -sc) = "focal" ]] \
-; then \
-sudo apt install -y \
-libvips-dev \
-; fi \
-&& if \
-[[ $(lsb_release -sc) = "jammy" ]] \
-; then \
-sudo apt install -y \
-libavif-dev \
-libyuv-dev \
-; fi \
 && sudo apt -y clean \
 && sudo apt -y autoclean \
 && sudo apt -y autoremove \
