@@ -66,7 +66,6 @@ libuv1-dev \
 libvips-dev \
 libwebp-dev \
 libwebsockets-dev \
-libxen-dev \
 libxslt1-dev \
 libyajl-dev \
 libzip-dev \
