@@ -17,6 +17,7 @@ doxygen \
 extra-cmake-modules \
 g++ \
 glances \
+golang \
 imagemagick \
 libaio-dev \
 libaom-dev \
@@ -77,6 +78,7 @@ make \
 moreutils \
 multitail \
 nasm \
+ncdu \
 net-tools \
 ninja-build \
 num-utils \
