@@ -9,4 +9,10 @@ echo 'Approximate system RAM (GB): '$(grep MemTotal /proc/meminfo | awk '{print 
 && sudo mkswap /swapfile \
 && sudo swapon /swapfile --show \
 && sudo sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab'
-fi
+fi \
+&& sudo apt update \
+&& sudo apt -y dist-upgrade \
+&& sudo apt -y autoclean \
+&& sudo apt -y autoremove --purge \
+&& sudo apt -y clean \
+&& sudo reboot
