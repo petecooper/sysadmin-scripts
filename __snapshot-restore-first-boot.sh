@@ -8,5 +8,5 @@ echo 'Approximate system RAM (GB): '$(grep MemTotal /proc/meminfo | awk '{print 
 && sudo chmod 600 /swapfile \
 && sudo mkswap /swapfile \
 && sudo swapon /swapfile --show \
-&& sudo sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab' \
+&& sudo sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab'
 fi
