@@ -1,5 +1,5 @@
 #!/bin/bash
-for fn in `find /dev/disk/by-id/scsi* -printf "%f\n"` \
+for fn in `find /mnt/* -printf "%f\n"` \
 ; do
-sudo resize2fs "$fn"
+sudo xfs_growfs "$fn"
 done
