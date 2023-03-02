@@ -101,5 +101,5 @@ zlib1g-dev \
 zsh \
 && sudo apt -y clean \
 && sudo apt -y autoclean \
-&& sudo apt -y autoremove --purge
+&& sudo apt -y autoremove --purge \
 && echo 'Done.'
