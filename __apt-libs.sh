@@ -6,6 +6,7 @@ autogen \
 automake \
 autotools-dev \
 bison \
+bsdutils \
 build-essential \
 certbot \
 clang \
@@ -100,5 +101,5 @@ zlib1g-dev \
 zsh \
 && sudo apt -y clean \
 && sudo apt -y autoclean \
-&& sudo apt -y autoremove \
+&& sudo apt -y autoremove --purge
 && echo 'Done.'
