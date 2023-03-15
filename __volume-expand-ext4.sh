@@ -1,5 +1,5 @@
 #!/bin/bash
-for fn in `find /dev/disk/by-id/scsi* -printf "%f\n"` \
+for fn in `realpath /dev/disk/by-id/scsi*` \
 ; do
 sudo resize2fs "$fn"
 done
