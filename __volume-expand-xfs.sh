@@ -1,5 +1,5 @@
 #!/bin/bash
-for fn in `find /mnt/* -printf "%f\n"` \
+for fn in `realpath /dev/disk/by-id/scsi*` \
 ; do
 sudo xfs_growfs "$fn"
 done
