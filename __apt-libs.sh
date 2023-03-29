@@ -17,6 +17,7 @@ redis \
 uuid-dev \
 zip \
 zlib1g-dev \
+&& sudo apt -y dist-upgrade \
 && sudo apt -y clean \
 && sudo apt -y autoclean \
 && sudo apt -y autoremove --purge \
