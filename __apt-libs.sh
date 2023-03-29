@@ -7,9 +7,15 @@ certbot \
 cmake \
 g++ \
 gcc \
+libatomic-ops-dev \
 libbpfcc-dev \
+libbsd-dev \
+libgd-dev \
+libgeoip-dev \
 liblz4-dev \
+libpcre3-dev \
 libprotobuf-dev \
+libxslt1-dev \
 make \
 pkg-config \
 postfix \
