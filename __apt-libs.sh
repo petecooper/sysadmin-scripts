@@ -20,6 +20,7 @@ make \
 pkg-config \
 postfix \
 redis \
+tree \
 uuid-dev \
 zip \
 zlib1g-dev \
