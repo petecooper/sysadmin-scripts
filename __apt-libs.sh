@@ -1,8 +1,10 @@
 #!/bin/bash
 sudo apt update \
 && sudo apt install -y \
+apt-transport-https \
 autoconf \
 automake \
+bison \
 certbot \
 cmake \
 g++ \
@@ -22,6 +24,7 @@ libprotobuf-dev \
 libsodium-dev \
 libsqlite3-dev \
 libssl-dev \
+libuv1-dev \
 libxslt1-dev \
 libzip-dev \
 make \
