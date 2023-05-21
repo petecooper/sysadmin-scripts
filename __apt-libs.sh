@@ -7,6 +7,7 @@ automake \
 bison \
 certbot \
 cmake \
+dpkg-dev \
 g++ \
 gcc \
 libargon2-dev \
