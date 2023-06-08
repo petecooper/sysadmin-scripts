@@ -29,6 +29,7 @@ libuv1-dev \
 libxslt1-dev \
 libzip-dev \
 make \
+ninja-build \
 pkg-config \
 postfix \
 re2c \
