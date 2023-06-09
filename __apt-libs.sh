@@ -29,6 +29,7 @@ libuv1-dev \
 libxslt1-dev \
 libzip-dev \
 make \
+moreutils \
 ninja-build \
 pkg-config \
 postfix \
