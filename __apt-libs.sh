@@ -13,7 +13,6 @@ gcc \
 libargon2-dev \
 libatomic-ops-dev \
 libbison-dev \
-libbpf-dev \
 libbpfcc-dev \
 libbsd-dev \
 libbz2-dev \
