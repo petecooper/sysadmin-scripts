@@ -40,6 +40,12 @@ tree \
 uuid-dev \
 zip \
 zlib1g-dev \
+&& if \
+[[ $(awk -F= '$1=="ID" { print $2 ;}' /etc/os-release) = "debian" ]] \
+; then \
+sudo apt install -y \
+debian-goodies \
+; fi \
 && sudo apt -y dist-upgrade \
 && sudo apt -y clean \
 && sudo apt -y autoclean \
