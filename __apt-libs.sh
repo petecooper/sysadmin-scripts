@@ -44,6 +44,7 @@ zlib1g-dev \
 [[ $(awk -F= '$1=="ID" { print $2 ;}' /etc/os-release) = "debian" ]] \
 ; then \
 sudo apt install -y \
+dctrl-tools \
 debian-goodies \
 ; fi \
 && sudo apt -y dist-upgrade \
