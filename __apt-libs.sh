@@ -36,6 +36,7 @@ pkg-config \
 postfix \
 re2c \
 redis \
+screen \
 tree \
 uuid-dev \
 zip \
