@@ -1,5 +1,5 @@
 #!/bin/bash
-while read site; \
+while read -r site; \
 do printf "$site" \
 && printf ": " \
 && curl -Is https://"$site" | grep "^HTTP" | cat; \
