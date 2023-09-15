@@ -5,7 +5,6 @@ apt-transport-https \
 autoconf \
 automake \
 bison \
-certbot \
 cmake \
 dpkg-dev \
 g++ \
@@ -41,6 +40,12 @@ tree \
 uuid-dev \
 zip \
 zlib1g-dev \
+&& if \
+[[ $(awk -F= '$1=="ID" { print $2 ;}' /etc/os-release) = "ubuntu" ]] \
+; then \
+sudo apt -oDebug::pkgAcquire::Worker=1 install -y \
+certbot \
+; fi \
 && if \
 [[ $(awk -F= '$1=="ID" { print $2 ;}' /etc/os-release) = "debian" ]] \
 ; then \
