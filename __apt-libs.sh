@@ -10,6 +10,7 @@ cmake \
 dpkg-dev \
 g++ \
 gcc \
+htop \
 libargon2-dev \
 libatomic-ops-dev \
 libbison-dev \
@@ -41,12 +42,6 @@ tree \
 uuid-dev \
 zip \
 zlib1g-dev \
-&& if \
-[[ $(awk -F= '$1=="ID" { print $2 ;}' /etc/os-release) = "ubuntu" ]] \
-; then \
-sudo apt install -y \
-certbot \
-; fi \
 && if \
 [[ $(awk -F= '$1=="ID" { print $2 ;}' /etc/os-release) = "debian" ]] \
 ; then \
