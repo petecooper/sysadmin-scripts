@@ -10,6 +10,7 @@ cmake \
 dpkg-dev \
 g++ \
 gcc \
+htop \
 libargon2-dev \
 libatomic-ops-dev \
 libbison-dev \
