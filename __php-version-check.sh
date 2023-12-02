@@ -4,15 +4,6 @@ if [ $? -eq 0 ]
 then
   echo -e "symlink: PHP "$(/usr/local/bin/php -r 'echo PHP_VERSION;')
 fi
-/etc/php/8.0/sbin/php-fpm -v &> /dev/null
-if [ $? -eq 0 ]
-then
-  echo -e "\n8.0     php CLI: PHP "$(/etc/php/8.0/bin/php -r 'echo PHP_VERSION;')
-  echo -e "8.0 php-fpm CLI: PHP "$(/etc/php/8.0/sbin/php-fpm -i | grep "PHP Version" | head -1 | sed 's/.*=> //')
-  echo -e "8.0 socket test: PHP" $(curl -s 'http://127.0.0.1:880/php-fpm-ver.php')
-  echo -e "8.0 php CLI SSL:" $(/etc/php/8.0/bin/php -r 'echo OPENSSL_VERSION_TEXT;')
-  echo -e "8.0 php-fpm SSL:" $(/etc/php/8.0/sbin/php-fpm -i | grep "OpenSSL Library Version" | sed 's/.*=> //')
-fi
 /etc/php/8.1/sbin/php-fpm -v &> /dev/null
 if [ $? -eq 0 ]
 then
