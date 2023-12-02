@@ -15,6 +15,7 @@ libargon2-dev \
 libatomic-ops-dev \
 libbison-dev \
 libbpfcc-dev \
+libbrotli-dev \
 libbsd-dev \
 libbz2-dev \
 libelf-dev \
