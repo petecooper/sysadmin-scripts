@@ -1,3 +1,3 @@
 #!/bin/bash
-rm -rf ~/php*-source.tar.gz \
-&& rm -rf ~/php*-source/
+rm -rf $HOME/php*-source.tar.gz \
+&& rm -rf $HOME/php*-source/
