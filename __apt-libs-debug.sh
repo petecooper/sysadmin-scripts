@@ -39,6 +39,7 @@ postfix \
 re2c \
 redis \
 screen \
+tuned \
 tree \
 uuid-dev \
 zip \
