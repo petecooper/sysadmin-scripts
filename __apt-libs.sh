@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo apt update \
-&& sudo apt install -y \
+&& sudo apt -y install \
 apt-transport-https \
 autoconf \
 automake \
@@ -32,6 +32,7 @@ libuv1-dev \
 libxslt1-dev \
 libzip-dev \
 make \
+mc \
 moreutils \
 ninja-build \
 pkg-config \
@@ -47,9 +48,10 @@ zlib1g-dev \
 && if \
 [[ $(awk -F= '$1=="ID" { print $2 ;}' /etc/os-release) = "debian" ]] \
 ; then \
-sudo apt install -y \
+sudo apt -y install \
 dctrl-tools \
 debian-goodies \
+popularity-contest \
 ; fi \
 && sudo apt -y dist-upgrade \
 && sudo apt -y clean \
