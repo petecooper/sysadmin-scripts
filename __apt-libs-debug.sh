@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo apt -oDebug::pkgAcquire::Worker=1 update \
-&& sudo apt -oDebug::pkgAcquire::Worker=1 install -y \
+&& sudo apt -oDebug::pkgAcquire::Worker=1 -y install \
 apt-transport-https \
 autoconf \
 automake \
@@ -32,6 +32,7 @@ libuv1-dev \
 libxslt1-dev \
 libzip-dev \
 make \
+mc \
 moreutils \
 ninja-build \
 pkg-config \
@@ -47,9 +48,10 @@ zlib1g-dev \
 && if \
 [[ $(awk -F= '$1=="ID" { print $2 ;}' /etc/os-release) = "debian" ]] \
 ; then \
-sudo apt -oDebug::pkgAcquire::Worker=1 install -y \
+sudo apt -oDebug::pkgAcquire::Worker=1 -y install \
 dctrl-tools \
 debian-goodies \
+popularity-contest \
 ; fi \
 && sudo apt -oDebug::pkgAcquire::Worker=1 -y dist-upgrade \
 && sudo apt -oDebug::pkgAcquire::Worker=1 -y clean \
