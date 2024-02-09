@@ -8,6 +8,7 @@ bison \
 certbot \
 cmake \
 dpkg-dev \
+flent \
 g++ \
 gcc \
 htop \
