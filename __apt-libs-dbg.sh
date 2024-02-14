@@ -36,6 +36,7 @@ libzip-dev \
 make \
 mc \
 moreutils \
+multitail \
 ninja-build \
 pkg-config \
 postfix \
