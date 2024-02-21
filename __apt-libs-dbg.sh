@@ -13,6 +13,7 @@ flent \
 g++ \
 gcc \
 htop \
+libaio1 \
 libargon2-dev \
 libatomic-ops-dev \
 libbison-dev \
