@@ -43,6 +43,7 @@ pkg-config \
 postfix \
 re2c \
 redis \
+rsync \
 screen \
 tuned \
 tree \
