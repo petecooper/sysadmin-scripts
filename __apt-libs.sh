@@ -46,7 +46,6 @@ redis \
 rsync \
 screen \
 tuned \
-tree \
 uuid-dev \
 zip \
 zlib1g-dev \
