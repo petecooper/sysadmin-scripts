@@ -11,7 +11,7 @@ sudo fallocate -l "$(< /etc/swap-file-size)" /swapfile \
 && echo -e '* Swapfile created. Reboot to confirm. *' \
 && echo -e '****************************************' \
 ; else \
-echo '***************************************' \
+echo '************************************' \
 && echo '* `/etc/swap-file-size` not found. *' \
 && echo '************************************' \
 ; fi
