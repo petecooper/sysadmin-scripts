@@ -22,6 +22,7 @@ libbrotli-dev \
 libbsd-dev \
 libbz2-dev \
 libelf-dev \
+libfl-dev \
 libgd-dev \
 libgeoip-dev \
 liblz4-dev \
