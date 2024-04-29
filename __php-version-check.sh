@@ -31,6 +31,15 @@ then
   echo -e "8.3 php CLI SSL:" $(/etc/php/8.3/bin/php -r 'echo OPENSSL_VERSION_TEXT;')
   echo -e "8.3 php-fpm SSL:" $(/etc/php/8.3/sbin/php-fpm -i | grep "OpenSSL Library Version" | sed 's/.*=> //')
 fi
+/etc/php/8.4/sbin/php-fpm -v &> /dev/null
+if [ $? -eq 0 ]
+then
+  echo -e "\n8.4     php CLI: PHP "$(/etc/php/8.4/bin/php -r 'echo PHP_VERSION;')
+  echo -e "8.4 php-fpm CLI: PHP "$(/etc/php/8.4/sbin/php-fpm -i | grep "PHP Version" | head -1 | sed 's/.*=> //')
+  echo -e "8.4 socket test: PHP" $(curl -s 'http://127.0.0.1:884/php-fpm-ver.php')
+  echo -e "8.4 php CLI SSL:" $(/etc/php/8.4/bin/php -r 'echo OPENSSL_VERSION_TEXT;')
+  echo -e "8.4 php-fpm SSL:" $(/etc/php/8.4/sbin/php-fpm -i | grep "OpenSSL Library Version" | sed 's/.*=> //')
+fi
 /etc/php/php-src/sbin/php-fpm -v &> /dev/null
 if [ $? -eq 0 ]
 then
