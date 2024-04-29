@@ -22,6 +22,7 @@ libbrotli-dev \
 libbsd-dev \
 libbz2-dev \
 libelf-dev \
+libfl-dev \
 libgd-dev \
 libgeoip-dev \
 liblz4-dev \
@@ -46,7 +47,6 @@ redis \
 rsync \
 screen \
 tuned \
-tree \
 uuid-dev \
 zip \
 zlib1g-dev \
