@@ -26,6 +26,7 @@ libfl-dev \
 libgd-dev \
 libgeoip-dev \
 liblz4-dev \
+libncurses5-dev \
 libonig-dev \
 libpcre3-dev \
 libprotobuf-dev \
@@ -53,7 +54,7 @@ zlib1g-dev \
 && if \
 [[ $(awk -F= '$1=="ID" { print $2 ;}' /etc/os-release) = "debian" ]] \
 ; then \
-sudo apt -oDebug::pkgAcquire::Worker=1 -y install \
+sudo apt -y install \
 dctrl-tools \
 debian-goodies \
 popularity-contest \
