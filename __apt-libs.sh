@@ -26,6 +26,7 @@ libfl-dev \
 libgd-dev \
 libgeoip-dev \
 liblz4-dev \
+libncurses5-dev \
 libonig-dev \
 libpcre3-dev \
 libprotobuf-dev \
