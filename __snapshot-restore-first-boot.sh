@@ -10,5 +10,5 @@ echo 'Approximate system RAM (GB): '$(grep MemTotal /proc/meminfo | awk '{print 
 && sudo swapon /swapfile --show \
 && sudo sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab'
 fi \
-&& sudo bash $HOME/__apt-libs.sh \
+&& sudo bash $USER/__apt-libs.sh \
 && sudo reboot
