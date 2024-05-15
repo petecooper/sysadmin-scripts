@@ -1,2 +1,2 @@
 #!/bin/bash
-tree --du -h ./
+/usr/bin/tree --du -h ./
