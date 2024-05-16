@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo /usr/sbin/nginx -s stop
+nginx_vendor="$(sudo nginx -v)"
