@@ -36,6 +36,7 @@ libssl-dev \
 libuv1-dev \
 libxslt1-dev \
 libzip-dev \
+lrzip \
 make \
 mc \
 moreutils \
