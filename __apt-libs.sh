@@ -33,7 +33,7 @@ libncurses5-dev \
 libonig-dev \
 libpcre2-dev \
 libprotobuf-dev \
-libsasl-dev \
+libsasl2-dev \
 libsodium-dev \
 libsqlite3-dev \
 libssl-dev \
