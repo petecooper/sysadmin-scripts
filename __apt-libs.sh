@@ -65,7 +65,6 @@ zlib1g-dev \
 sudo apt -y install \
 dctrl-tools \
 debian-goodies \
-popularity-contest \
 ; fi \
 && sudo apt -y dist-upgrade \
 && sudo apt -y clean \
