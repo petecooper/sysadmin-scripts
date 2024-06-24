@@ -5,7 +5,10 @@ apt-transport-https \
 autoconf \
 automake \
 bison \
+build-essential \
+ccache \
 certbot \
+clang \
 cmake \
 dpkg-dev \
 fio \
@@ -17,24 +20,38 @@ libaio1 \
 libargon2-dev \
 libatomic-ops-dev \
 libbison-dev \
+libbpf-dev \
+libbpf-tools \
 libbpfcc-dev \
 libbrotli-dev \
 libbsd-dev \
 libbz2-dev \
+libcurl4-openssl-dev \
 libelf-dev \
 libfl-dev \
 libgd-dev \
 libgeoip-dev \
+libjpeg-dev \
 liblz4-dev \
+libmnl-dev \
+libncurses5-dev \
 libonig-dev \
-libpcre3-dev \
+libpcre2-dev \
+libpng-dev \
 libprotobuf-dev \
+libsasl2-dev \
 libsodium-dev \
 libsqlite3-dev \
 libssl-dev \
+libsystemd-dev \
+libtool \
 libuv1-dev \
+libwebp-dev \
 libxslt1-dev \
+libyaml-dev \
 libzip-dev \
+libzstd-dev \
+lrzip \
 make \
 mc \
 moreutils \
@@ -56,7 +73,7 @@ zlib1g-dev \
 sudo apt -y install \
 dctrl-tools \
 debian-goodies \
-popularity-contest \
+libavif-dev \
 ; fi \
 && sudo apt -y dist-upgrade \
 && sudo apt -y clean \
