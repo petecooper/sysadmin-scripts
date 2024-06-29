@@ -38,6 +38,7 @@ libgeoip-dev \
 libhiredis-dev \
 libjansson-dev \
 libjpeg-dev \
+libkqueue-dev \
 liblua5.1-dev \
 liblz4-dev \
 libmagic-dev \
