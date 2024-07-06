@@ -18,6 +18,7 @@ g++ \
 gcc \
 gosu \
 htop \
+json-c \
 libaio1 \
 libargon2-dev \
 libatomic-ops-dev \
