@@ -37,8 +37,8 @@ libgd-dev \
 libgeoip-dev \
 libhiredis-dev \
 libjansson-dev \
-libjson-c-dev \
 libjpeg-dev \
+libjson-c-dev \
 liblua5.4-dev \
 liblz4-dev \
 libmagic-dev \
