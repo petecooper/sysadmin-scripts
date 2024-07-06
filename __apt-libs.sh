@@ -18,7 +18,6 @@ g++ \
 gcc \
 gosu \
 htop \
-json-c \
 libaio1 \
 libargon2-dev \
 libatomic-ops-dev \
@@ -38,6 +37,7 @@ libgd-dev \
 libgeoip-dev \
 libhiredis-dev \
 libjansson-dev \
+libjson-c-dev \
 libjpeg-dev \
 liblua5.4-dev \
 liblz4-dev \
