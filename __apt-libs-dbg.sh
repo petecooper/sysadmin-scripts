@@ -22,8 +22,6 @@ libaio1 \
 libargon2-dev \
 libatomic-ops-dev \
 libbison-dev \
-libbpf-dev \
-libbpf-tools \
 libbpfcc-dev \
 libbrotli-dev \
 libbsd-dev \
@@ -37,8 +35,8 @@ libgd-dev \
 libgeoip-dev \
 libhiredis-dev \
 libjansson-dev \
-libjpeg-dev \
 libjson-c-dev \
+libjpeg-dev \
 liblua5.4-dev \
 liblz4-dev \
 libmagic-dev \
@@ -67,9 +65,9 @@ make \
 mc \
 moreutils \
 multitail \
+ncdu \
 ninja-build \
 pkg-config \
-postfix \
 python3-dev \
 python3-git \
 python3-semantic-version \
@@ -80,18 +78,30 @@ screen \
 swig \
 tuned \
 uuid-dev \
+whois \
 zip \
 zlib1g-dev \
+&& echo postfix postfix/main_mailer_type string Internet Site | sudo debconf-set-selections \
+&& sudo apt -oDebug::pkgAcquire::Worker=1 -y install \
+postfix \
 && if \
 [[ $(awk -F= '$1=="ID" { print $2 ;}' /etc/os-release) = "debian" ]] \
 ; then \
-sudo apt -y install \
+; then \
+echo popularity-contest popularity-contest/participate boolean true | sudo debconf-set-selections \
+&& sudo apt -oDebug::pkgAcquire::Worker=1 -y install \
 dctrl-tools \
-debian-goodies \
 libavif-dev \
+libbpf-dev \
+libbpf-tools \
+popularity-contest \
+; fi \
+&& sudo apt -oDebug::pkgAcquire::Worker=1 -y install \
+debian-goodies \
 ; fi \
 && sudo apt -oDebug::pkgAcquire::Worker=1 -y dist-upgrade \
 && sudo apt -oDebug::pkgAcquire::Worker=1 -y clean \
 && sudo apt -oDebug::pkgAcquire::Worker=1 -y autoclean \
 && sudo apt -oDebug::pkgAcquire::Worker=1 -y autoremove --purge \
+&& dpkg -l linux-{image,headers}-* | awk '/^ii/{print $2}' | grep -E '[0-9]+\.[0-9]+\.[0-9]+' | grep -v "$(uname -r | cut -d- -f-2)" | xargs sudo apt -y purge \
 && echo 'Done.'
