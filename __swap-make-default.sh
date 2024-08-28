@@ -1,6 +1,6 @@
 #!/bin/bash
 if \
-[[ -f /etc/swap-file-size ]] \
+[[ -s /etc/swap-file-size ]] \
 ; then \
 sudo fallocate -l "$(< /etc/swap-file-size)" /swapfile \
 && sudo chmod 600 /swapfile \
