@@ -2,16 +2,18 @@
 if \
 [[ -s /etc/swap-file-size ]] \
 ; then \
-sudo fallocate -l "$(< /etc/swap-file-size)" /swapfile \
+swap_size="$(< /etc/swap-file-size)" \
+&& sudo fallocate -l "$swap_size" /swapfile \
 && sudo chmod 600 /swapfile \
 && sudo mkswap /swapfile \
 && sudo swapon /swapfile --show \
 && sudo sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab' \
-&& echo -e '****************************************' \
-&& echo -e '* Swapfile created. Reboot to confirm. *' \
-&& echo -e '****************************************' \
+&& echo -e '\nSwapfile size: '"$swap_size" \
+&& echo -e '\n*******************' \
+&& echo -e '* Swapfile created. *' \
+&& echo -e '*********************' \
 ; else \
-echo '************************************' \
+echo '\n************************************' \
 && echo '* `/etc/swap-file-size` not found. *' \
 && echo '************************************' \
 ; fi
