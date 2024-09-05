@@ -9,7 +9,7 @@ swap_size="$(< /etc/swap-file-size)" \
 && sudo swapon /swapfile --show \
 && sudo sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab' \
 && echo -e '\n=> Swapfile size: '"$swap_size" \
-&& echo -e '\n*******************' \
+&& echo -e '\n*********************' \
 && echo -e '* Swapfile created. *' \
 && echo -e '*********************' \
 ; else \
