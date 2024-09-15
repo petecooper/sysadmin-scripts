@@ -22,19 +22,19 @@ echo 'PHP 8.4 found.' \
 ; fi \
 && echo 'PHP 8.3 checks...' \
 && if \
-[ -d "$php_prefix"/php/8.3/ ] || [ -d "$php_prefix"/php/8.3/nts/ ]|| [ -d "$php_prefix"/php/8.4/zts/ ] \
+[ -d "$php_prefix"/php/8.3/ ] || [ -d "$php_prefix"/php/8.3/nts/ ]|| [ -d "$php_prefix"/php/8.3/zts/ ] \
 ; then \
 echo 'PHP 8.3 found.' \
 ; fi \
 && echo 'PHP 8.2 checks...' \
 && if \
-[ -d "$php_prefix"/php/8.2/ ] || [ -d "$php_prefix"/php/8.4/nts/ ]|| [ -d "$php_prefix"/php/8.4/zts/ ] \
+[ -d "$php_prefix"/php/8.2/ ] || [ -d "$php_prefix"/php/8.2/nts/ ]|| [ -d "$php_prefix"/php/8.2/zts/ ] \
 ; then \
 echo 'PHP 8.2 found.' \
 ; fi \
 && echo 'PHP 8.1 checks...' \
 && if \
-[ -d "$php_prefix"/php/8.1/ ] || [ -d "$php_prefix"/php/8.4/nts/ ]|| [ -d "$php_prefix"/php/8.4/zts/ ] \
+[ -d "$php_prefix"/php/8.1/ ] || [ -d "$php_prefix"/php/8.1/nts/ ]|| [ -d "$php_prefix"/php/8.1/zts/ ] \
 ; then \
 echo 'PHP 8.2 found.' \
 ; fi \
