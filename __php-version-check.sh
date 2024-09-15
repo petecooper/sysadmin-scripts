@@ -7,26 +7,41 @@ php_prefix="$(< /etc/php-prefix)" \
 [ -d "$php_prefix"/php/8.4/ ] || [ -d "$php_prefix"/php/8.4/nts/ ]|| [ -d "$php_prefix"/php/8.4/zts/ ] \
 ; then \
 echo -e '\n=> PHP 8.4 found.' \
+&& echo '=> PHP 8.4 NTS checks.' \
+&& echo '=> PHP 8.4 ZTS checks.' \
+&& echo '=> PHP 8.4 legacy checks.' \
 ; fi \
 && if \
 [ -d "$php_prefix"/php/8.3/ ] || [ -d "$php_prefix"/php/8.3/nts/ ]|| [ -d "$php_prefix"/php/8.3/zts/ ] \
 ; then \
 echo -e '\n=> PHP 8.3 found.' \
+&& echo '=> PHP 8.3 NTS checks.' \
+&& echo '=> PHP 8.3 ZTS checks.' \
+&& echo '=> PHP 8.3 legacy checks.' \
 ; fi \
 && if \
 [ -d "$php_prefix"/php/8.2/ ] || [ -d "$php_prefix"/php/8.2/nts/ ]|| [ -d "$php_prefix"/php/8.2/zts/ ] \
 ; then \
 echo -e '\n=> PHP 8.2 found.' \
+&& echo '=> PHP 8.2 NTS checks.' \
+&& echo '=> PHP 8.2 ZTS checks.' \
+&& echo '=> PHP 8.2 legacy checks.' \
 ; fi \
 && if \
 [ -d "$php_prefix"/php/8.1/ ] || [ -d "$php_prefix"/php/8.1/nts/ ]|| [ -d "$php_prefix"/php/8.1/zts/ ] \
 ; then \
 echo -e '\n=> PHP 8.2 found.' \
+&& echo '=> PHP 8.2 NTS checks.' \
+&& echo '=> PHP 8.2 ZTS checks.' \
+&& echo '=> PHP 8.2 legacy checks.' \
 ; fi \
 && if \
 [ -d "$php_prefix"/php/php-src/ ] || [ -d "$php_prefix"/php/php-src/nts/ ]|| [ -d "$php_prefix"/php/php-src/zts/ ] \
 ; then \
 echo -e '\n=> PHP src found.' \
+&& echo '=> PHP src NTS checks.' \
+&& echo '=> PHP src ZTS checks.' \
+&& echo '=> PHP src legacy checks.' \
 ; fi \
 ; else \
 echo -e '\n=> `/etc/php-prefix` NOT found.' \
