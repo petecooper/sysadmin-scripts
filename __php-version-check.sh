@@ -22,6 +22,7 @@ php_thread_safety_check="$("$php_prefix"/php/8.4/nts/bin/php -r 'echo ZEND_THREA
 ; else \
 echo -e '`php` NOT found.' \
 ; fi \
+&& echo '=> PHP 8.4 NTS `php-fpm` found.' \
 && echo '=> PHP 8.4 NTS `php-fpm` checks.' \
 && echo '=> PHP 8.4 NTS socket checks.' \
 ; fi \
@@ -41,6 +42,7 @@ php_thread_safety_check="$("$php_prefix"/php/8.4/zts/bin/php -r 'echo ZEND_THREA
 ; else \
 echo -e '`php` NOT found.' \
 ; fi \
+&& echo '=> PHP 8.4 ZTS `php-fpm` found.' \
 && echo '=> PHP 8.4 ZTS `php-fpm` checks.' \
 && echo '=> PHP 8.4 ZTS socket checks.' \
 ; fi \
@@ -60,6 +62,7 @@ php_thread_safety_check="$("$php_prefix"/php/8.4/bin/php -r 'echo ZEND_THREAD_SA
 ; else \
 echo -e '`php` NOT found.' \
 ; fi \
+&& echo '=> PHP 8.4 `php-fpm` found.' \
 && echo '=> PHP 8.4 `php-fpm` checks.' \
 && echo '=> PHP 8.4 socket checks.' \
 ; fi \
@@ -83,6 +86,7 @@ php_thread_safety_check="$("$php_prefix"/php/8.3/nts/bin/php -r 'echo ZEND_THREA
 ; else \
 echo -e '`php` NOT found.' \
 ; fi \
+&& echo '=> PHP 8.3 NTS `php-fpm` found.' \
 && echo '=> PHP 8.3 NTS `php-fpm` checks.' \
 && echo '=> PHP 8.3 NTS socket checks.' \
 ; fi \
@@ -102,6 +106,7 @@ php_thread_safety_check="$("$php_prefix"/php/8.3/zts/bin/php -r 'echo ZEND_THREA
 ; else \
 echo -e '`php` NOT found.' \
 ; fi \
+&& echo '=> PHP 8.3 ZTS `php-fpm` found.' \
 && echo '=> PHP 8.3 ZTS `php-fpm` checks.' \
 && echo '=> PHP 8.3 ZTS socket checks.' \
 ; fi \
@@ -121,6 +126,7 @@ php_thread_safety_check="$("$php_prefix"/php/8.3/bin/php -r 'echo ZEND_THREAD_SA
 ; else \
 echo -e '`php` NOT found.' \
 ; fi \
+&& echo '=> PHP 8.3 `php-fpm` found.' \
 && echo '=> PHP 8.3 `php-fpm` checks.' \
 && echo '=> PHP 8.3 socket checks.' \
 ; fi \
@@ -144,6 +150,7 @@ php_thread_safety_check="$("$php_prefix"/php/8.2/nts/bin/php -r 'echo ZEND_THREA
 ; else \
 echo -e '`php` NOT found.' \
 ; fi \
+&& echo '=> PHP 8.2 NTS `php-fpm` found.' \
 && echo '=> PHP 8.2 NTS `php-fpm` checks.' \
 && echo '=> PHP 8.2 NTS socket checks.' \
 ; fi \
@@ -163,6 +170,7 @@ php_thread_safety_check="$("$php_prefix"/php/8.2/zts/bin/php -r 'echo ZEND_THREA
 ; else \
 echo -e '`php` NOT found.' \
 ; fi \
+&& echo '=> PHP 8.2 ZTS `php-fpm` found.' \
 && echo '=> PHP 8.2 ZTS `php-fpm` checks.' \
 && echo '=> PHP 8.2 ZTS socket checks.' \
 ; fi \
@@ -182,6 +190,7 @@ php_thread_safety_check="$("$php_prefix"/php/8.2/bin/php -r 'echo ZEND_THREAD_SA
 ; else \
 echo -e '`php` NOT found.' \
 ; fi \
+&& echo '=> PHP 8.2 `php-fpm` found.' \
 && echo '=> PHP 8.2 `php-fpm` checks.' \
 && echo '=> PHP 8.2 socket checks.' \
 ; fi \
@@ -205,6 +214,7 @@ php_thread_safety_check="$("$php_prefix"/php/8.1/nts/bin/php -r 'echo ZEND_THREA
 ; else \
 echo -e '`php` NOT found.' \
 ; fi \
+&& echo '=> PHP 8.1 NTS `php-fpm` found.' \
 && echo '=> PHP 8.1 NTS `php-fpm` checks.' \
 && echo '=> PHP 8.1 NTS socket checks.' \
 ; fi \
@@ -224,6 +234,7 @@ php_thread_safety_check="$("$php_prefix"/php/8.1/zts/bin/php -r 'echo ZEND_THREA
 ; else \
 echo -e '`php` NOT found.' \
 ; fi \
+&& echo '=> PHP 8.1 ZTS `php-fpm` found.' \
 && echo '=> PHP 8.1 ZTS `php-fpm` checks.' \
 && echo '=> PHP 8.1 ZTS socket checks.' \
 ; fi \
@@ -243,6 +254,7 @@ php_thread_safety_check="$("$php_prefix"/php/8.1/bin/php -r 'echo ZEND_THREAD_SA
 ; else \
 echo -e '`php` NOT found.' \
 ; fi \
+&& echo '=> PHP 8.1 `php-fpm` found.' \
 && echo '=> PHP 8.1 `php-fpm` checks.' \
 && echo '=> PHP 8.1 socket checks.' \
 ; fi \
@@ -266,6 +278,7 @@ php_thread_safety_check="$("$php_prefix"/php/php-src/nts/bin/php -r 'echo ZEND_T
 ; else \
 echo -e '`php` NOT found.' \
 ; fi \
+&& echo '=> PHP src NTS `php-fpm` found.' \
 && echo '=> PHP src NTS `php-fpm` checks.' \
 && echo '=> PHP src NTS socket checks.' \
 ; fi \
@@ -285,6 +298,7 @@ php_thread_safety_check="$("$php_prefix"/php/php-src/zts/bin/php -r 'echo ZEND_T
 ; else \
 echo -e '`php` NOT found.' \
 ; fi \
+&& echo '=> PHP src ZTS `php-fpm` found.' \
 && echo '=> PHP src ZTS `php-fpm` checks.' \
 && echo '=> PHP src ZTS socket checks.' \
 ; fi \
@@ -304,6 +318,7 @@ php_thread_safety_check="$("$php_prefix"/php/php-src/bin/php -r 'echo ZEND_THREA
 ; else \
 echo -e '`php` NOT found.' \
 ; fi \
+&& echo '=> PHP src `php-fpm` found.' \
 && echo '=> PHP src `php-fpm` checks.' \
 && echo '=> PHP src socket checks.' \
 ; fi \
