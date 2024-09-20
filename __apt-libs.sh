@@ -12,7 +12,7 @@ ccache \
 certbot \
 clang \
 cmake \
-cpio
+cpio \
 dpkg-dev \
 fio \
 flent \
@@ -89,9 +89,11 @@ swig \
 tuned \
 uuid-dev \
 whois \
+wireguard \
 zip \
 zlib1g-dev \
-&& echo postfix postfix/main_mailer_type string Internet Site | sudo debconf-set-selections \
+&& echo postfix postfix/mailname string "$(</etc/fqdn)" | sudo debconf-set-selections \
+&& echo postfix postfix/main_mailer_type string 'Internet Site' | sudo debconf-set-selections \
 && sudo apt -y install \
 postfix \
 && if \
