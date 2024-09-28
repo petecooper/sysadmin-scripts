@@ -43,9 +43,9 @@ libjansson-dev \
 libjemalloc-dev \
 libjpeg-dev \
 libjson-c-dev \
-liblua5.4-dev \
 liblz4-dev \
 libmagic-dev \
+libmaxminddb-dev \
 libmnl-dev \
 libncurses-dev \
 libncurses5-dev \
@@ -53,6 +53,7 @@ libnet1-dev \
 libonig-dev \
 libpcap-dev \
 libpcre2-dev \
+libpcre3-dev \
 libpng-dev \
 libprotobuf-dev \
 libsasl2-dev \
@@ -68,6 +69,7 @@ libyaml-dev \
 libzip-dev \
 libzstd-dev \
 lrzip \
+lz4 \
 make \
 mc \
 moreutils \
@@ -92,6 +94,7 @@ whois \
 wireguard \
 zip \
 zlib1g-dev \
+zstd \
 && echo postfix postfix/mailname string "$(</etc/fqdn)" | sudo debconf-set-selections \
 && echo postfix postfix/main_mailer_type string 'Internet Site' | sudo debconf-set-selections \
 && sudo apt -y install \
@@ -105,7 +108,10 @@ dctrl-tools \
 libavif-dev \
 libbpf-dev \
 libbpf-tools \
+liblua5.4-dev \
 popularity-contest \
+&& sudo apt -y --no-install-recommends install \
+ksmtuned \
 ; fi \
 && sudo apt -y install \
 debian-goodies \
@@ -113,5 +119,4 @@ debian-goodies \
 && sudo apt -y clean \
 && sudo apt -y autoclean \
 && sudo apt -y autoremove --purge \
-&& dpkg -l linux-{image,headers}-* | awk '/^ii/{print $2}' | grep -E '[0-9]+\.[0-9]+\.[0-9]+' | grep -v "$(uname -r | cut -d- -f-2)" | xargs sudo apt -y purge \
-&& echo 'Done.'
+&& dpkg -l linux-{image,headers}-* | awk '/^ii/{print $2}' | grep -E '[0-9]+\.[0-9]+\.[0-9]+' | grep -v "$(uname -r | cut -d- -f-2)" | xargs sudo apt -y purge \&& echo 'Done.'
