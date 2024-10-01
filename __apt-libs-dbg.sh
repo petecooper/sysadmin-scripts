@@ -12,7 +12,7 @@ ccache \
 certbot \
 clang \
 cmake \
-cpio
+cpio \
 dpkg-dev \
 fio \
 flent \
@@ -43,9 +43,9 @@ libjansson-dev \
 libjemalloc-dev \
 libjpeg-dev \
 libjson-c-dev \
-liblua5.4-dev \
 liblz4-dev \
 libmagic-dev \
+libmaxminddb-dev \
 libmnl-dev \
 libncurses-dev \
 libncurses5-dev \
@@ -53,6 +53,7 @@ libnet1-dev \
 libonig-dev \
 libpcap-dev \
 libpcre2-dev \
+libpcre3-dev \
 libpng-dev \
 libprotobuf-dev \
 libsasl2-dev \
@@ -68,6 +69,7 @@ libyaml-dev \
 libzip-dev \
 libzstd-dev \
 lrzip \
+lz4 \
 make \
 mc \
 moreutils \
@@ -89,9 +91,12 @@ swig \
 tuned \
 uuid-dev \
 whois \
+wireguard \
 zip \
 zlib1g-dev \
-&& echo postfix postfix/main_mailer_type string Internet Site | sudo debconf-set-selections \
+zstd \
+&& echo postfix postfix/mailname string "$(</etc/fqdn)" | sudo debconf-set-selections \
+&& echo postfix postfix/main_mailer_type string 'Internet Site' | sudo debconf-set-selections \
 && sudo apt -oDebug::pkgAcquire::Worker=1 -y install \
 postfix \
 && if \
@@ -104,7 +109,10 @@ dctrl-tools \
 libavif-dev \
 libbpf-dev \
 libbpf-tools \
+liblua5.4-dev \
 popularity-contest \
+&& sudo apt -oDebug::pkgAcquire::Worker=1 -y --no-install-recommends install \
+ksmtuned \
 ; fi \
 && sudo apt -oDebug::pkgAcquire::Worker=1 -y install \
 debian-goodies \
