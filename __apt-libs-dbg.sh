@@ -48,6 +48,7 @@ libfontconfig1 \
 libgcrypt-dev \
 libgd-dev \
 libgeoip-dev \
+libglib2.0-dev \
 libjansson-dev \
 libjemalloc-dev \
 libjpeg-dev \
@@ -91,6 +92,7 @@ mc \
 moreutils \
 multitail \
 musl \
+mydumper \
 ncdu \
 net-tools \
 ninja-build \
