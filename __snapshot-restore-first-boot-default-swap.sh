@@ -1,18 +1,28 @@
 #!/bin/bash
-if free | awk '/^Swap:/ {exit !$2}'; then
-echo 'Swap ready.'
-else
-echo 'Approximate system RAM (GB): '$(grep MemTotal /proc/meminfo | awk '{print $2}' | xargs -I {} echo "scale=4; {}/1024^2" | bc | xargs printf "%.2f") \
-&& read -p 'Swapfile size with unit (e.g. 4G): ' swapfilesize \
-&& sudo fallocate -l "$swapfilesize" /swapfile \
+if \
+[[ -s /etc/swap-file-size ]] \
+; then \
+swap_size="$(< /etc/swap-file-size)" \
+&& sudo fallocate -l "$swap_size" /swapfile \
 && sudo chmod 600 /swapfile \
 && sudo mkswap /swapfile \
 && sudo swapon /swapfile --show \
-&& sudo sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab'
-fi \
+&& sudo sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab' \
+&& echo -e '\n=> Swapfile size: '"$swap_size" \
+&& echo -e '\n*********************' \
+&& echo -e '* Swapfile created. *' \
+&& echo -e '*********************' \
 && sudo apt update \
 && sudo apt -y dist-upgrade \
 && sudo apt -y autoclean \
 && sudo apt -y clean \
 && sudo apt -y autoremove --purge \
-&& sudo reboot
+&& echo -e '\n********************' \
+&& echo -e '* Done. Rebooting. *' \
+&& echo -e '********************' \
+&& sudo reboot \
+; else \
+echo '\n************************************' \
+&& echo '* `/etc/swap-file-size` not found. *' \
+&& echo '************************************' \
+; fi
