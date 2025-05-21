@@ -7,7 +7,6 @@ autoconf-archive \
 automake \
 autotools-dev \
 bison \
-bpftool \
 build-essential \
 ccache \
 certbot \
@@ -33,6 +32,7 @@ libarchive-dev \
 libargon2-dev \
 libatomic-ops-dev \
 libbison-dev \
+libboost-dev \
 libbpfcc-dev \
 libbrotli-dev \
 libbsd-dev \
@@ -58,6 +58,7 @@ libgeoip-dev \
 libglib2.0-dev \
 libheif-dev \
 libhwy-dev \
+libibverbs-dev \
 libimagequant-dev \
 libjansson-dev \
 libjemalloc-dev \
@@ -85,10 +86,13 @@ libpng-dev \
 libpoppler-glib-dev \
 libproc2-dev \
 libprotobuf-dev \
+libpsl-dev \
+librdmacm-dev \
 libsasl2-dev \
 libsodium-dev \
 libspng-dev \
 libsqlite3-dev \
+libssh-dev \
 libssl-dev \
 libsystemd-dev \
 libtool \
@@ -100,6 +104,7 @@ libzip-dev \
 libzstd-dev \
 linux-headers-"$(uname -r)" \
 llvm \
+locate \
 lrzip \
 lz4 \
 make \
@@ -125,6 +130,7 @@ re2c \
 rsync \
 screen \
 swig \
+scons \
 tuned \
 unzip \
 uuid-dev \
@@ -143,6 +149,7 @@ postfix \
 ; then \
 echo popularity-contest popularity-contest/participate boolean true | sudo debconf-set-selections \
 && sudo apt -y install \
+bpftool \
 dctrl-tools \
 libavif-dev \
 libbpf-dev \
@@ -158,5 +165,4 @@ debian-goodies \
 && sudo apt -y clean \
 && sudo apt -y autoclean \
 && sudo apt -y autoremove --purge \
-&& dpkg -l linux-{image,headers}-* | awk '/^ii/{print $2}' | grep -E '[0-9]+\.[0-9]+\.[0-9]+' | grep -v "$(uname -r | cut -d- -f-2)" | xargs sudo apt -y purge \
-&& echo 'Done.'
+&& dpkg -l linux-{image,headers}-* | awk '/^ii/{print $2}' | grep -E '[0-9]+\.[0-9]+\.[0-9]+' | grep -v "$(uname -r | cut -d- -f-2)" | xargs sudo apt -y purge \&& echo 'Done.'
