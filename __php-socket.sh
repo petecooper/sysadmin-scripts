@@ -17,8 +17,8 @@ egrep -lir "php-fpm85.sock" /opt/nginx/sites-available/ | \
 sed 's/^/-> /g' | \
 sort \
 ; fi \
-; fi
-if \
+; fi \
+&& if \
 [ -S "/var/run/php/php-fpm84.sock" ] \
 ; then
 echo -e "\nFound PHP 8.4 socket at \`/var/run/php/php-fpm84.sock\`." \
@@ -36,8 +36,8 @@ egrep -lir "php-fpm84.sock" /opt/nginx/sites-available/ | \
 sed 's/^/-> /g' | \
 sort \
 ; fi \
-; fi
-if \
+; fi \
+&& if \
 [ -S "/var/run/php/php-fpm83.sock" ] \
 ; then
 echo -e "\nFound PHP 8.3 socket at \`/var/run/php/php-fpm83.sock\`." \
@@ -55,8 +55,8 @@ egrep -lir "php-fpm83.sock" /opt/nginx/sites-available/ | \
 sed 's/^/-> /g' | \
 sort \
 ; fi \
-; fi
-if \
+; fi \
+&& if \
 [ -S "/var/run/php/php-fpm82.sock" ] \
 ; then
 echo -e "\nFound PHP 8.2 socket at \`/var/run/php/php-fpm82.sock\`." \
@@ -74,8 +74,8 @@ egrep -lir "php-fpm82.sock" /opt/nginx/sites-available/ | \
 sed 's/^/-> /g' | \
 sort \
 ; fi \
-; fi
-if \
+; fi \
+&& if \
 [ -S "/var/run/php/php-fpm81.sock" ] \
 ; then
 echo -e "\nFound PHP 8.1 socket at \`/var/run/php/php-fpm81.sock\`." \
