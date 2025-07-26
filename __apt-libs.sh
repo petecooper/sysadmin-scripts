@@ -140,14 +140,17 @@ xxd \
 zip \
 zlib1g-dev \
 zstd \
-&& echo postfix postfix/mailname string "$(</etc/fqdn)" | sudo debconf-set-selections \
-&& echo postfix postfix/main_mailer_type string 'Internet Site' | sudo debconf-set-selections \
+&& echo postfix postfix/mailname string "$(</etc/fqdn)" | \
+sudo debconf-set-selections \
+&& echo postfix postfix/main_mailer_type string 'Internet Site' | \
+sudo debconf-set-selections \
 && sudo apt -y install \
 postfix \
 && if \
 [[ $(awk -F= '$1=="ID" { print $2 ;}' /etc/os-release) = "debian" ]] \
 ; then \
-echo popularity-contest popularity-contest/participate boolean true | sudo debconf-set-selections \
+echo popularity-contest popularity-contest/participate boolean true | \
+sudo debconf-set-selections \
 && sudo apt -y install \
 bpftool \
 dctrl-tools \
@@ -165,4 +168,9 @@ debian-goodies \
 && sudo apt -y clean \
 && sudo apt -y autoclean \
 && sudo apt -y autoremove --purge \
-&& dpkg -l linux-{image,headers}-* | awk '/^ii/{print $2}' | grep -E '[0-9]+\.[0-9]+\.[0-9]+' | grep -v "$(uname -r | cut -d- -f-2)" | xargs sudo apt -y purge \&& echo 'Done.'
+&& dpkg -l linux-{image,headers}-* | \
+awk '/^ii/{print $2}' | \
+grep -E '[0-9]+\.[0-9]+\.[0-9]+' | \
+grep -v "$(uname -r | \
+cut -d- -f-2)" | \
+xargs sudo apt -y purge \&& echo 'Done.'

@@ -1,8 +1,13 @@
 #!/bin/bash
-if free | awk '/^Swap:/ {exit !$2}'; then
+if free | \
+awk '/^Swap:/ {exit !$2}'; then
 echo 'Swap ready.'
 else
-echo 'Approximate system RAM (GB): '$(grep MemTotal /proc/meminfo | awk '{print $2}' | xargs -I {} echo "scale=4; {}/1024^2" | bc | xargs printf "%.2f") \
+echo 'Approximate system RAM (GB): '$(grep MemTotal /proc/meminfo | \
+awk '{print $2}' | \
+xargs -I {} echo "scale=4; {}/1024^2" | \
+bc | \
+xargs printf "%.2f") \
 && read -p 'Swapfile size with unit (e.g. 4G): ' swapfilesize \
 && sudo fallocate -l "$swapfilesize" /swapfile \
 && sudo chmod 600 /swapfile \
