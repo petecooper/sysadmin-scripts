@@ -117,10 +117,12 @@ mydumper \
 ncdu \
 net-tools \
 ninja-build \
+p7zip \
 patch \
 pbzip2 \
 pigz \
 pkg-config \
+plzip \
 python3-dev \
 python3-docutils \
 python3-git \
@@ -136,6 +138,7 @@ unzip \
 uuid-dev \
 whois \
 wireguard \
+xfsprogs \
 xxd \
 zip \
 zlib1g-dev \
