@@ -13,7 +13,7 @@ swap_size="$(< /etc/swap-file-size)" \
 && echo -e '* Swapfile created. *' \
 && echo -e '*********************' \
 ; else \
-echo '\n************************************' \
+echo -e '\n************************************' \
 && echo '* `/etc/swap-file-size` not found. *' \
 && echo '************************************' \
 ; fi
