@@ -27,7 +27,6 @@ graphviz \
 htop \
 lbzip2 \
 libaio-dev \
-libaio1 \
 libarchive-dev \
 libargon2-dev \
 libatomic-ops-dev \
@@ -47,12 +46,12 @@ libelf-dev \
 libev-dev \
 libevent-dev \
 libexif-dev \
-libexpat-dev \
+libexpat1-dev \
 libfftw3-dev \
 libfl-dev \
 libfontconfig-dev \
 libfontconfig1 \
-libgcrypt-dev \
+libgcrypt20-dev \
 libgd-dev \
 libgeoip-dev \
 libglib2.0-dev \
@@ -75,13 +74,11 @@ libmemcached-dev \
 libmemcached-tools \
 libmnl-dev \
 libncurses-dev \
-libncurses5-dev \
 libnet1-dev \
 libonig-dev \
 libopenslide-dev \
 libpcap-dev \
 libpcre2-dev \
-libpcre3-dev \
 libpng-dev \
 libpoppler-glib-dev \
 libproc2-dev \
@@ -113,7 +110,6 @@ meson \
 moreutils \
 multitail \
 musl \
-mydumper \
 ncdu \
 net-tools \
 ninja-build \
