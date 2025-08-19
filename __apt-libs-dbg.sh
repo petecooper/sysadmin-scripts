@@ -1,5 +1,17 @@
 #!/bin/bash
 sudo apt -oDebug::pkgAcquire::Worker=1 update \
+&& if \
+[[ $(uname -m) == "aarch64" ]] \
+; then \
+sudo apt -oDebug::pkgAcquire::Worker=1 -y install \
+linux-headers-arm64 \
+; fi \
+&& if \
+[[ $(uname -m) == "x86_64" ]] \
+; then \
+sudo apt -oDebug::pkgAcquire::Worker=1 -y install \
+linux-headers-amd64 \
+; fi \
 && sudo apt -oDebug::pkgAcquire::Worker=1 -y install \
 apt-transport-https \
 autoconf \
@@ -57,6 +69,7 @@ libgeoip-dev \
 libglib2.0-dev \
 libheif-dev \
 libhwy-dev \
+libicu-dev \
 libibverbs-dev \
 libimagequant-dev \
 libjansson-dev \
@@ -99,7 +112,6 @@ libxslt1-dev \
 libyaml-dev \
 libzip-dev \
 libzstd-dev \
-linux-headers-"$(uname -r)" \
 llvm \
 locate \
 lrzip \
