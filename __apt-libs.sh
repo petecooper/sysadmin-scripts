@@ -184,5 +184,4 @@ awk '/^ii/{print $2}' | \
 grep -E '[0-9]+\.[0-9]+\.[0-9]+' | \
 grep -v "$(uname -r | \
 cut -d- -f-2)" | \
-xargs sudo apt -y purge \
-&& echo 'Done.'
+xargs sudo apt -y purge \&& echo 'Done.'
