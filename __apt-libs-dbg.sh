@@ -35,6 +35,7 @@ g++ \
 gcc \
 gettext \
 gosu \
+gpgv \
 graphviz \
 htop \
 lbzip2 \
