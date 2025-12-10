@@ -12,6 +12,8 @@ linux-headers-arm64 \
 sudo apt -y install \
 linux-headers-amd64 \
 ; fi \
+&& echo popularity-contest popularity-contest/participate boolean true | \
+sudo debconf-set-selections \
 && sudo apt -y install \
 apt-transport-https \
 autoconf \
@@ -19,12 +21,16 @@ autoconf-archive \
 automake \
 autotools-dev \
 bison \
+bpftool \
+bpftune \
 build-essential \
 ccache \
 certbot \
 clang \
 cmake \
 cpio \
+dctrl-tools \
+debian-goodies \
 dialog \
 dkms \
 dpkg-dev \
@@ -43,8 +49,11 @@ libaio-dev \
 libarchive-dev \
 libargon2-dev \
 libatomic-ops-dev \
+libavif-dev \
 libbison-dev \
 libboost-dev \
+libbpf-dev \
+libbpf-tools \
 libbpfcc-dev \
 libbrotli-dev \
 libbsd-dev \
@@ -70,8 +79,8 @@ libgeoip-dev \
 libglib2.0-dev \
 libheif-dev \
 libhwy-dev \
-libicu-dev \
 libibverbs-dev \
+libicu-dev \
 libimagequant-dev \
 libjansson-dev \
 libjemalloc-dev \
@@ -80,6 +89,7 @@ libjson-c-dev \
 libjxl-dev \
 libkrb5-dev \
 libldap-dev \
+liblua5.4-dev \
 liblz4-dev \
 libmagic-dev \
 libmagickcore-dev \
@@ -130,8 +140,10 @@ p7zip \
 patch \
 pbzip2 \
 pigz \
+pixz \
 pkg-config \
 plzip \
+popularity-contest \
 python3-dev \
 python3-docutils \
 python3-git \
@@ -139,9 +151,9 @@ python3-semantic-version \
 python3-sphinx \
 re2c \
 rsync \
+scons \
 screen \
 swig \
-scons \
 tuned \
 unzip \
 uuid-dev \
@@ -152,24 +164,9 @@ xxd \
 zip \
 zlib1g-dev \
 zstd \
-&& if \
-[[ $(awk -F= '$1=="ID" { print $2 ;}' /etc/os-release) = "debian" ]] \
-; then \
-echo popularity-contest popularity-contest/participate boolean true | \
-sudo debconf-set-selections \
-&& sudo apt -y install \
-bpftool \
-dctrl-tools \
-libavif-dev \
-libbpf-dev \
-libbpf-tools \
-liblua5.4-dev \
-popularity-contest \
 && sudo apt -y --no-install-recommends install \
 ksmtuned \
-; fi \
 && sudo apt -y install \
-debian-goodies \
 && sudo apt -y dist-upgrade \
 && sudo apt -y clean \
 && sudo apt -y autoclean \
