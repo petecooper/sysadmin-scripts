@@ -14,7 +14,12 @@ echo -e '\n=> PHP 8.5 NTS found.' \
 [ -f "$php_prefix"/php/8.5/nts/bin/php ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.5/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '    `php`:' \
 "$("$php_prefix"/php/8.5/nts/bin/php -r 'echo PHP_VERSION;')" \
 "$php_thread_safety_status" \
@@ -26,7 +31,12 @@ echo -e '`php` NOT found.' \
 [ -f "$php_prefix"/php/8.5/nts/sbin/php-fpm ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.5/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '`php-fpm`:' \
 "$("$php_prefix"/php/8.5/nts/sbin/php-fpm -i | \
 grep "PHP Version" | \
@@ -49,7 +59,12 @@ echo -e '\n=> PHP 8.5 ZTS found.' \
 [ -f "$php_prefix"/php/8.5/zts/bin/php ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.5/zts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '    `php`:' \
 "$("$php_prefix"/php/8.5/zts/bin/php -r 'echo PHP_VERSION;')" \
 "$php_thread_safety_status" \
@@ -61,7 +76,12 @@ echo -e '`php` NOT found.' \
 [ -f "$php_prefix"/php/8.5/zts/sbin/php-fpm ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.5/zts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '`php-fpm`:' \
 "$("$php_prefix"/php/8.5/zts/sbin/php-fpm -i | \
 grep "PHP Version" | \
@@ -84,7 +104,12 @@ echo -e '\n=> PHP 8.5 found.' \
 [ -f "$php_prefix"/php/8.5/bin/php ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.5/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '    `php`:' \
 "$("$php_prefix"/php/8.5/bin/php -r 'echo PHP_VERSION;')" \
 "$php_thread_safety_status" \
@@ -96,7 +121,12 @@ echo -e '`php` NOT found.' \
 [ -f "$php_prefix"/php/8.5/sbin/php-fpm ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.5/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '`php-fpm`:' \
 "$("$php_prefix"/php/8.5/sbin/php-fpm -i | \
 grep "PHP Version" | \
@@ -123,7 +153,12 @@ echo -e '\n=> PHP 8.4 NTS found.' \
 [ -f "$php_prefix"/php/8.4/nts/bin/php ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.4/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '    `php`:' \
 "$("$php_prefix"/php/8.4/nts/bin/php -r 'echo PHP_VERSION;')" \
 "$php_thread_safety_status" \
@@ -135,7 +170,12 @@ echo -e '`php` NOT found.' \
 [ -f "$php_prefix"/php/8.4/nts/sbin/php-fpm ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.4/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '`php-fpm`:' \
 "$("$php_prefix"/php/8.4/nts/sbin/php-fpm -i | \
 grep "PHP Version" | \
@@ -158,7 +198,12 @@ echo -e '\n=> PHP 8.4 ZTS found.' \
 [ -f "$php_prefix"/php/8.4/zts/bin/php ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.4/zts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '    `php`:' \
 "$("$php_prefix"/php/8.4/zts/bin/php -r 'echo PHP_VERSION;')" \
 "$php_thread_safety_status" \
@@ -170,7 +215,12 @@ echo -e '`php` NOT found.' \
 [ -f "$php_prefix"/php/8.4/zts/sbin/php-fpm ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.4/zts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '`php-fpm`:' \
 "$("$php_prefix"/php/8.4/zts/sbin/php-fpm -i | \
 grep "PHP Version" | \
@@ -193,7 +243,12 @@ echo -e '\n=> PHP 8.4 found.' \
 [ -f "$php_prefix"/php/8.4/bin/php ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.4/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '    `php`:' \
 "$("$php_prefix"/php/8.4/bin/php -r 'echo PHP_VERSION;')" \
 "$php_thread_safety_status" \
@@ -205,7 +260,12 @@ echo -e '`php` NOT found.' \
 [ -f "$php_prefix"/php/8.4/sbin/php-fpm ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.4/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '`php-fpm`:' \
 "$("$php_prefix"/php/8.4/sbin/php-fpm -i | \
 grep "PHP Version" | \
@@ -232,7 +292,12 @@ echo -e '\n=> PHP 8.3 NTS found.' \
 [ -f "$php_prefix"/php/8.3/nts/bin/php ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.3/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '    `php`:' \
 "$("$php_prefix"/php/8.3/nts/bin/php -r 'echo PHP_VERSION;')" \
 "$php_thread_safety_status" \
@@ -244,7 +309,12 @@ echo -e '`php` NOT found.' \
 [ -f "$php_prefix"/php/8.3/nts/sbin/php-fpm ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.3/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '`php-fpm`:' \
 "$("$php_prefix"/php/8.3/nts/sbin/php-fpm -i | \
 grep "PHP Version" | \
@@ -267,7 +337,12 @@ echo -e '\n=> PHP 8.3 ZTS found.' \
 [ -f "$php_prefix"/php/8.3/zts/bin/php ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.3/zts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '    `php`:' \
 "$("$php_prefix"/php/8.3/zts/bin/php -r 'echo PHP_VERSION;')" \
 "$php_thread_safety_status" \
@@ -279,7 +354,12 @@ echo -e '`php` NOT found.' \
 [ -f "$php_prefix"/php/8.3/zts/sbin/php-fpm ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.3/zts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '`php-fpm`:' \
 "$("$php_prefix"/php/8.3/zts/sbin/php-fpm -i | \
 grep "PHP Version" | \
@@ -302,7 +382,12 @@ echo -e '\n=> PHP 8.3 found.' \
 [ -f "$php_prefix"/php/8.3/bin/php ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.3/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '    `php`:' \
 "$("$php_prefix"/php/8.3/bin/php -r 'echo PHP_VERSION;')" \
 "$php_thread_safety_status" \
@@ -314,7 +399,12 @@ echo -e '`php` NOT found.' \
 [ -f "$php_prefix"/php/8.3/sbin/php-fpm ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.3/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '`php-fpm`:' \
 "$("$php_prefix"/php/8.3/sbin/php-fpm -i | \
 grep "PHP Version" | \
@@ -341,7 +431,12 @@ echo -e '\n=> PHP 8.2 NTS found.' \
 [ -f "$php_prefix"/php/8.2/nts/bin/php ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.2/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '    `php`:' \
 "$("$php_prefix"/php/8.2/nts/bin/php -r 'echo PHP_VERSION;')" \
 "$php_thread_safety_status" \
@@ -353,7 +448,12 @@ echo -e '`php` NOT found.' \
 [ -f "$php_prefix"/php/8.2/nts/sbin/php-fpm ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.2/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '`php-fpm`:' \
 "$("$php_prefix"/php/8.2/nts/sbin/php-fpm -i | \
 grep "PHP Version" | \
@@ -376,7 +476,12 @@ echo -e '\n=> PHP 8.2 ZTS found.' \
 [ -f "$php_prefix"/php/8.2/zts/bin/php ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.2/zts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '    `php`:' \
 "$("$php_prefix"/php/8.2/zts/bin/php -r 'echo PHP_VERSION;')" \
 "$php_thread_safety_status" \
@@ -388,7 +493,12 @@ echo -e '`php` NOT found.' \
 [ -f "$php_prefix"/php/8.2/zts/sbin/php-fpm ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.2/zts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '`php-fpm`:' \
 "$("$php_prefix"/php/8.2/zts/sbin/php-fpm -i | \
 grep "PHP Version" | \
@@ -411,7 +521,12 @@ echo -e '\n=> PHP 8.2 found.' \
 [ -f "$php_prefix"/php/8.2/bin/php ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.2/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '    `php`:' \
 "$("$php_prefix"/php/8.2/bin/php -r 'echo PHP_VERSION;')" \
 "$php_thread_safety_status" \
@@ -423,7 +538,12 @@ echo -e '`php` NOT found.' \
 [ -f "$php_prefix"/php/8.2/sbin/php-fpm ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.2/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '`php-fpm`:' \
 "$("$php_prefix"/php/8.2/sbin/php-fpm -i | \
 grep "PHP Version" | \
@@ -450,7 +570,12 @@ echo -e '\n=> PHP 8.1 NTS found.' \
 [ -f "$php_prefix"/php/8.1/nts/bin/php ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.1/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '    `php`:' \
 "$("$php_prefix"/php/8.1/nts/bin/php -r 'echo PHP_VERSION;')" \
 "$php_thread_safety_status" \
@@ -462,7 +587,12 @@ echo -e '`php` NOT found.' \
 [ -f "$php_prefix"/php/8.1/nts/sbin/php-fpm ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.1/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '`php-fpm`:' \
 "$("$php_prefix"/php/8.1/nts/sbin/php-fpm -i | \
 grep "PHP Version" | \
@@ -485,7 +615,12 @@ echo -e '\n=> PHP 8.1 ZTS found.' \
 [ -f "$php_prefix"/php/8.1/zts/bin/php ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.1/zts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '    `php`:' \
 "$("$php_prefix"/php/8.1/zts/bin/php -r 'echo PHP_VERSION;')" \
 "$php_thread_safety_status" \
@@ -497,7 +632,12 @@ echo -e '`php` NOT found.' \
 [ -f "$php_prefix"/php/8.1/zts/sbin/php-fpm ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.1/zts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '`php-fpm`:' \
 "$("$php_prefix"/php/8.1/zts/sbin/php-fpm -i | \
 grep "PHP Version" | \
@@ -520,7 +660,12 @@ echo -e '\n=> PHP 8.1 found.' \
 [ -f "$php_prefix"/php/8.1/bin/php ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.1/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '    `php`:' \
 "$("$php_prefix"/php/8.1/bin/php -r 'echo PHP_VERSION;')" \
 "$php_thread_safety_status" \
@@ -532,7 +677,12 @@ echo -e '`php` NOT found.' \
 [ -f "$php_prefix"/php/8.1/sbin/php-fpm ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/8.1/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-&& if [ "$php_thread_safety_check" = "1" ] ; then php_thread_safety_status="(ZTS;" ; else php_thread_safety_status="(NTS;" ; fi \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" ; fi \
 && echo -e '`php-fpm`:' \
 "$("$php_prefix"/php/8.1/sbin/php-fpm -i | \
 grep "PHP Version" | \
