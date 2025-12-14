@@ -1,5 +1,19 @@
 #!/bin/bash
 sudo apt update \
+&& if \
+[[ $(uname -m) == "aarch64" ]] \
+; then \
+sudo apt -y install \
+linux-headers-arm64 \
+; fi \
+&& if \
+[[ $(uname -m) == "x86_64" ]] \
+; then \
+sudo apt -y install \
+linux-headers-amd64 \
+; fi \
+&& echo popularity-contest popularity-contest/participate boolean true | \
+sudo debconf-set-selections \
 && sudo apt -y install \
 apt-transport-https \
 autoconf \
@@ -7,12 +21,16 @@ autoconf-archive \
 automake \
 autotools-dev \
 bison \
+bpftool \
+bpftune \
 build-essential \
 ccache \
 certbot \
 clang \
 cmake \
 cpio \
+dctrl-tools \
+debian-goodies \
 dialog \
 dkms \
 dpkg-dev \
@@ -23,16 +41,19 @@ g++ \
 gcc \
 gettext \
 gosu \
+gpgv \
 graphviz \
 htop \
 lbzip2 \
 libaio-dev \
-libaio1 \
 libarchive-dev \
 libargon2-dev \
 libatomic-ops-dev \
+libavif-dev \
 libbison-dev \
 libboost-dev \
+libbpf-dev \
+libbpf-tools \
 libbpfcc-dev \
 libbrotli-dev \
 libbsd-dev \
@@ -47,18 +68,19 @@ libelf-dev \
 libev-dev \
 libevent-dev \
 libexif-dev \
-libexpat-dev \
+libexpat1-dev \
 libfftw3-dev \
 libfl-dev \
 libfontconfig-dev \
 libfontconfig1 \
-libgcrypt-dev \
+libgcrypt20-dev \
 libgd-dev \
 libgeoip-dev \
 libglib2.0-dev \
 libheif-dev \
 libhwy-dev \
 libibverbs-dev \
+libicu-dev \
 libimagequant-dev \
 libjansson-dev \
 libjemalloc-dev \
@@ -67,6 +89,7 @@ libjson-c-dev \
 libjxl-dev \
 libkrb5-dev \
 libldap-dev \
+liblua5.4-dev \
 liblz4-dev \
 libmagic-dev \
 libmagickcore-dev \
@@ -75,13 +98,11 @@ libmemcached-dev \
 libmemcached-tools \
 libmnl-dev \
 libncurses-dev \
-libncurses5-dev \
 libnet1-dev \
 libonig-dev \
 libopenslide-dev \
 libpcap-dev \
 libpcre2-dev \
-libpcre3-dev \
 libpng-dev \
 libpoppler-glib-dev \
 libproc2-dev \
@@ -102,7 +123,6 @@ libxslt1-dev \
 libyaml-dev \
 libzip-dev \
 libzstd-dev \
-linux-headers-"$(uname -r)" \
 llvm \
 locate \
 lrzip \
@@ -113,7 +133,6 @@ meson \
 moreutils \
 multitail \
 musl \
-mydumper \
 ncdu \
 net-tools \
 ninja-build \
@@ -121,8 +140,10 @@ p7zip \
 patch \
 pbzip2 \
 pigz \
+pixz \
 pkg-config \
 plzip \
+popularity-contest \
 python3-dev \
 python3-docutils \
 python3-git \
@@ -130,9 +151,9 @@ python3-semantic-version \
 python3-sphinx \
 re2c \
 rsync \
+scons \
 screen \
 swig \
-scons \
 tuned \
 unzip \
 uuid-dev \
@@ -143,30 +164,9 @@ xxd \
 zip \
 zlib1g-dev \
 zstd \
-&& echo postfix postfix/mailname string "$(</etc/fqdn)" | \
-sudo debconf-set-selections \
-&& echo postfix postfix/main_mailer_type string 'Internet Site' | \
-sudo debconf-set-selections \
-&& sudo apt -y install \
-postfix \
-&& if \
-[[ $(awk -F= '$1=="ID" { print $2 ;}' /etc/os-release) = "debian" ]] \
-; then \
-echo popularity-contest popularity-contest/participate boolean true | \
-sudo debconf-set-selections \
-&& sudo apt -y install \
-bpftool \
-dctrl-tools \
-libavif-dev \
-libbpf-dev \
-libbpf-tools \
-liblua5.4-dev \
-popularity-contest \
 && sudo apt -y --no-install-recommends install \
 ksmtuned \
-; fi \
 && sudo apt -y install \
-debian-goodies \
 && sudo apt -y dist-upgrade \
 && sudo apt -y clean \
 && sudo apt -y autoclean \
@@ -176,4 +176,5 @@ awk '/^ii/{print $2}' | \
 grep -E '[0-9]+\.[0-9]+\.[0-9]+' | \
 grep -v "$(uname -r | \
 cut -d- -f-2)" | \
-xargs sudo apt -y purge \&& echo 'Done.'
+xargs sudo apt -y purge \
+&& echo 'Done.'
