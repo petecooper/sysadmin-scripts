@@ -2,4 +2,6 @@
 find . \
 -maxdepth 1 \
 -type d \
--exec du -hs {} ';'
+-exec du -hs {} ';' | \
+sort -rh
+
