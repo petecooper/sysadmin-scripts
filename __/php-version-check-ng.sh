@@ -33,10 +33,7 @@ if \
                     ; fi \
                     && echo -e '    `php`:' \
                     "$("$php_prefix"/php/8.5/nts/bin/php -r 'echo PHP_VERSION;')" \
-                    '(' \
-                    "$php_thread_safety_status_upper" \
-                    "$("$php_prefix"/php/8.5/nts/bin/php -r 'echo OPENSSL_VERSION_TEXT;')" \
-                    ')' \
+                    '('"$php_thread_safety_status_upper"';'"$("$php_prefix"/php/8.5/nts/bin/php -r 'echo OPENSSL_VERSION_TEXT;')"')' \
                 ; else \
                     echo -e '=> PHP 8.5 NTS `php` NOT found.' \
                 ; fi \
