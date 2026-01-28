@@ -34,32 +34,12 @@ if \
             ; else \
                 echo -e '=> PHP 8.5 NTS `php` NOT found.' \
             ; fi \
-        ; fi \
-        && if \
-            [ -d "$php_prefix"/php/8.5/zts/ ] \
-        ; then \
-            echo -e '=> PHP 8.5 ZTS scaffold found.' \
             && if \
-                [ -f "$php_prefix"/php/8.5/zts/bin/php ] \
+                [ -f "$php_prefix"/php/8.5/nts/sbin/php-fpm ] \
             ; then \
-                echo -e '=> PHP 8.5 ZTS `php` found.' \
-                && unset \
-                php_thread_safety_bool \
-                php_thread_safety_status \
-                && php_thread_safety_bool="$("$php_prefix"/php/8.5/zts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
-                && if \
-                    [ "$php_thread_safety_bool" = "1" ] \
-                ; then \
-                    php_thread_safety_status="(ZTS;" \
-                ; else \
-                    php_thread_safety_status="(NTS;" \
-                ; fi \
-                && echo -e '    `php`:' \
-                "$("$php_prefix"/php/8.5/zts/bin/php -r 'echo PHP_VERSION;')" \
-                "$php_thread_safety_status" \
-                "$("$php_prefix"/php/8.5/zts/bin/php -r 'echo OPENSSL_VERSION_TEXT;')"')' \
+                echo -e '=> PHP 8.5 NTS `php-fpm` found.' \
             ; else \
-                echo -e '=> PHP 8.5 ZTS `php` NOT found.' \
+                echo -e '=> PHP 8.5 NTS `php-fpm` NOT found.' \
             ; fi \
         ; fi \
     ; fi \
