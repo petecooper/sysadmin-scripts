@@ -25,11 +25,11 @@ if \
                     php_thread_safety_status_upper \
                     && php_thread_safety_bool="$("$php_prefix"/php/8.5/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
                     && if \
-                    [ "$php_thread_safety_bool" = "1" ] \
+                        [ "$php_thread_safety_bool" = "1" ] \
                     ; then \
-                    php_thread_safety_status_upper="ZTS" \
+                        php_thread_safety_status_upper="ZTS" \
                     ; else \
-                    php_thread_safety_status_upper="NTS" \
+                        php_thread_safety_status_upper="NTS" \
                     ; fi \
                     && echo -e '    `php`:' \
                     "$("$php_prefix"/php/8.5/nts/bin/php -r 'echo PHP_VERSION;')" \
