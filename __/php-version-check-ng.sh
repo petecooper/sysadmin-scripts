@@ -4,14 +4,14 @@ if \
 ; then \
 php_prefix="$(< /etc/php-php-prefix)" \
 && if \
-[ -d "$php_prefix"/php/php/8.5/ ] || [ -d "$php_prefix"/php/php/8.5/nts/ ]|| [ -d "$php_prefix"/php/php/8.5/zts/ ] \
+[ -d "$php_prefix"/php/8.5/ ] || [ -d "$php_prefix"/php/8.5/nts/ ]|| [ -d "$php_prefix"/php/8.5/zts/ ] \
 ; then \
 if \
-[ -d "$php_prefix"/php/php/8.5/nts/bin/ ] \
+[ -d "$php_prefix"/php/8.5/nts/bin/ ] \
 ; then \
 echo -e '\n=> PHP 8.5 NTS found.' \
 && if \
-[ -f "$php_prefix"/php/php/8.5/nts/bin/php ] \
+[ -f "$php_prefix"/php/8.5/nts/bin/php ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/php/8.5/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
 && if \
@@ -29,7 +29,7 @@ php_thread_safety_status="(NTS;" \
 echo -e '`php` NOT found.' \
 ; fi \
 && if \
-[ -f "$php_prefix"/php/php/8.5/nts/sbin/php-fpm ] \
+[ -f "$php_prefix"/php/8.5/nts/sbin/php-fpm ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/php/8.5/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
 && if \
@@ -54,11 +54,11 @@ echo -e '`php-fpm` NOT found.' \
 && echo '=> PHP 8.5 NTS socket checks (todo).' \
 ; fi \
 && if \
-[ -d "$php_prefix"/php/php/8.5/zts/bin/ ] \
+[ -d "$php_prefix"/php/8.5/zts/bin/ ] \
 ; then \
 echo -e '\n=> PHP 8.5 ZTS found.' \
 && if \
-[ -f "$php_prefix"/php/php/8.5/zts/bin/php ] \
+[ -f "$php_prefix"/php/8.5/zts/bin/php ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/php/8.5/zts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
 && if \
@@ -76,7 +76,7 @@ php_thread_safety_status="(NTS;" \
 echo -e '`php` NOT found.' \
 ; fi \
 && if \
-[ -f "$php_prefix"/php/php/8.5/zts/sbin/php-fpm ] \
+[ -f "$php_prefix"/php/8.5/zts/sbin/php-fpm ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/php/8.5/zts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
 && if \
@@ -101,11 +101,11 @@ echo -e '`php-fpm` NOT found.' \
 && echo '=> PHP 8.5 ZTS socket checks (todo).' \
 ; fi \
 && if \
-[ -d "$php_prefix"/php/php/8.5/bin/ ] \
+[ -d "$php_prefix"/php/8.5/bin/ ] \
 ; then \
 echo -e '\n=> PHP 8.5 found.' \
 && if \
-[ -f "$php_prefix"/php/php/8.5/bin/php ] \
+[ -f "$php_prefix"/php/8.5/bin/php ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/php/8.5/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
 && if \
@@ -123,7 +123,7 @@ php_thread_safety_status="(NTS;" \
 echo -e '`php` NOT found.' \
 ; fi \
 && if \
-[ -f "$php_prefix"/php/php/8.5/sbin/php-fpm ] \
+[ -f "$php_prefix"/php/8.5/sbin/php-fpm ] \
 ; then \
 php_thread_safety_check="$("$php_prefix"/php/php/8.5/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
 && if \
