@@ -52,7 +52,7 @@ if \
                         echo -e '.pid NOT found.' \
                     ; fi \
                     && if \
-                        [ -s /run/php/php/8.5/nts/php-php-fpm85nts.sock ] \
+                        [ -S /run/php/php/8.5/nts/php-php-fpm85nts.sock ] \
                     ; then \
                         echo -e '.sock found.' \
                     ; else \
