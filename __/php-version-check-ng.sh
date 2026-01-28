@@ -2,7 +2,7 @@
 if \
 [[ -f /etc/php-php-prefix ]] \
 ; then \
-php_prefix="$(< /etc/php-prefix)" \
+php_prefix="$(< /etc/php-php-prefix)" \
 && if \
 [ -d "$php_prefix"/php/php/8.5/ ] || [ -d "$php_prefix"/php/php/8.5/nts/ ]|| [ -d "$php_prefix"/php/php/8.5/zts/ ] \
 ; then \
