@@ -43,11 +43,11 @@ php_thread_safety_status="(NTS;" \
 "$("$php_prefix"/php/8.5/nts/sbin/php-fpm -i | \
 grep "PHP Version" | \
 head -1 | \
-sed 's/.*=> /')" \
+sed 's/.*=> //')" \
 "$php_thread_safety_status" \
 "$("$php_prefix"/php/8.5/nts/sbin/php-fpm -i | \
 grep "OpenSSL Library Version" | \
-sed 's/.*=> /')"')' \
+sed 's/.*=> //')"')' \
 ; else \
 echo -e '`php-fpm` NOT found.' \
 ; fi \
@@ -90,11 +90,11 @@ php_thread_safety_status="(NTS;" \
 "$("$php_prefix"/php/8.5/zts/sbin/php-fpm -i | \
 grep "PHP Version" | \
 head -1 | \
-sed 's/.*=> /')" \
+sed 's/.*=> //')" \
 "$php_thread_safety_status" \
 "$("$php_prefix"/php/8.5/zts/sbin/php-fpm -i | \
 grep "OpenSSL Library Version" | \
-sed 's/.*=> /')"')' \
+sed 's/.*=> //')"')' \
 ; else \
 echo -e '`php-fpm` NOT found.' \
 ; fi \
@@ -137,11 +137,11 @@ php_thread_safety_status="(NTS;" \
 "$("$php_prefix"/php/8.5/sbin/php-fpm -i | \
 grep "PHP Version" | \
 head -1 | \
-sed 's/.*=> /')" \
+sed 's/.*=> //')" \
 "$php_thread_safety_status" \
 "$("$php_prefix"/php/8.5/sbin/php-fpm -i | \
 grep "OpenSSL Library Version" | \
-sed 's/.*=> /')"')' \
+sed 's/.*=> //')"')' \
 ; else \
 echo -e '`php-fpm` NOT found.' \
 ; fi \
