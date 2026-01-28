@@ -1,2 +1,6 @@
 #!/bin/bash
-/usr/bin/tree --du -h ./
+/usr/bin/tree \
+-aghpu \
+--dirsfirst \
+--du \
+./
