@@ -16,7 +16,9 @@ if \
                 [ -f "$php_prefix"/php/8.5/nts/bin/php ] \
             ; then \
                 echo -e '=> PHP 8.5 NTS `php` found.' \
-                && unset php_thread_safety_bool \
+                && unset \
+                php_thread_safety_bool \
+                php_thread_safety_status \
                 && php_thread_safety_bool="$("$php_prefix"/php/8.5/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
                 && if \
                     [ "$php_thread_safety_bool" = "1" ] \
@@ -37,7 +39,9 @@ if \
                 [ -f "$php_prefix"/php/8.5/zts/bin/php ] \
             ; then \
                 echo -e '=> PHP 8.5 ZTS `php` found.' \
-                && unset php_thread_safety_bool \
+                && unset \
+                php_thread_safety_bool \
+                php_thread_safety_status \
                 && php_thread_safety_bool="$("$php_prefix"/php/8.5/zts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
                 && if \
                     [ "$php_thread_safety_bool" = "1" ] \
