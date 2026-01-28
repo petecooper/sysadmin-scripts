@@ -44,6 +44,20 @@ if \
                     '     ('"$("$php_prefix"/php/8.5/nts/sbin/php-fpm -i | \
                     grep "OpenSSL Library Version" | \
                     sed 's/.*=> //')"')' \
+                    && if \
+                        [ -f /run/php/php/8.5/nts/php-php-fpm85nts.pid ] \
+                    ; then \
+                        echo -e '.pid found.' \
+                    ; else \
+                        echo -e '.pid NOT found.' \
+                    ; fi \
+                    && if \
+                        [ -f /run/php/php/8.5/nts/php-php-fpm85nts.sock ] \
+                    ; then \
+                        echo -e '.sock found.' \
+                    ; else \
+                        echo -e '.sock NOT found.' \
+                    ; fi \
                 ; else \
                     echo -e '=> PHP 8.5 NTS scaffold found; `php-fpm` NOT found.' \
                 ; fi \
