@@ -32,7 +32,8 @@ if \
                         php_thread_safety_status_upper="NTS" \
                     ; fi \
                     && echo -e '    `php`:' \
-                    "$("$php_prefix"/php/8.5/nts/bin/php -r 'echo PHP_VERSION;')"' ('"$php_thread_safety_status_upper"'; '"$("$php_prefix"/php/8.5/nts/bin/php -r 'echo OPENSSL_VERSION_TEXT;')"')' \
+                    "$("$php_prefix"/php/8.5/nts/bin/php -r 'echo PHP_VERSION;')" \
+                    ' ('"$php_thread_safety_status_upper"'; '"$("$php_prefix"/php/8.5/nts/bin/php -r 'echo OPENSSL_VERSION_TEXT;')"')' \
                 ; else \
                     echo -e '=> PHP 8.5 NTS `php` NOT found.' \
                 ; fi \
@@ -45,7 +46,7 @@ if \
                     grep "PHP Version" | \
                     head -1 | \
                     sed 's/.*=> //')" \
-                    '    ('"$("$php_prefix"/php/8.5/nts/sbin/php-fpm -i | \
+                    '     ('"$("$php_prefix"/php/8.5/nts/sbin/php-fpm -i | \
                     grep "OpenSSL Library Version" | \
                     sed 's/.*=> //')"')' \
                 ; else \
