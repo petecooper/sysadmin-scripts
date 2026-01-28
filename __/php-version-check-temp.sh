@@ -3,9 +3,11 @@ if \
 [[ -f /etc/php-php-prefix ]] \
 ; then \
 php_prefix="$(< /etc/php-php-prefix)" \
+
 && if \
-[ -d "$php_prefix"/php/8.5/ ] || [ -d "$php_prefix"/php/8.5/nts/ ]|| [ -d "$php_prefix"/php/8.5/zts/ ] \
+[ -d "$php_prefix"/php/8.5/ ] || [ -d "$php_prefix"/php/8.5/nts/ ] || [ -d "$php_prefix"/php/8.5/zts/ ] \
 ; then \
+
 if \
 [ -d "$php_prefix"/php/8.5/nts/bin/ ] \
 ; then \
