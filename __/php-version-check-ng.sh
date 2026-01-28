@@ -7,20 +7,16 @@ if \
     && if \
         [[ -d "$php_prefix" ]] \
     ; then \
-        echo -e '=> PHP prefix dir found.' \
-        && if \
+        if \
             [ -d "$php_prefix"/php/8.5/ ] \
         ; then \
-            echo -e '=> PHP 8.5 scaffold found.' \
-            && if \
+            if \
                 [ -d "$php_prefix"/php/8.5/nts ] \
             ; then \
-                echo -e '=> PHP 8.5 NTS scaffold found.' \
-                && if \
+                if \
                     [ -f "$php_prefix"/php/8.5/nts/bin/php ] \
                 ; then \
-                    echo -e '=> PHP 8.5 NTS `php` found.' \
-                    && unset \
+                    unset \
                     php_thread_safety_bool \
                     php_thread_safety_status_upper \
                     && php_thread_safety_bool="$("$php_prefix"/php/8.5/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
@@ -35,13 +31,12 @@ if \
                     "$("$php_prefix"/php/8.5/nts/bin/php -r 'echo PHP_VERSION;')" \
                     '('"$php_thread_safety_status_upper"'; '"$("$php_prefix"/php/8.5/nts/bin/php -r 'echo OPENSSL_VERSION_TEXT;')"')' \
                 ; else \
-                    echo -e '=> PHP 8.5 NTS `php` NOT found.' \
+                    echo -e '=> PHP 8.5 NTS scaffold found; `php` NOT found.' \
                 ; fi \
                 && if \
                     [ -f "$php_prefix"/php/8.5/nts/sbin/php-fpm ] \
                 ; then \
-                    echo -e '=> PHP 8.5 NTS `php-fpm` found.' \
-                    && echo -e '`php-fpm`:' \
+                    echo -e '`php-fpm`:' \
                     "$("$php_prefix"/php/8.5/nts/sbin/php-fpm -i | \
                     grep "PHP Version" | \
                     head -1 | \
@@ -50,7 +45,7 @@ if \
                     grep "OpenSSL Library Version" | \
                     sed 's/.*=> //')"')' \
                 ; else \
-                    echo -e '=> PHP 8.5 NTS `php-fpm` NOT found.' \
+                    echo -e '=> PHP 8.5 NTS scaffold found; `php-fpm` NOT found.' \
                 ; fi \
             ; fi \
         ; fi \
