@@ -2,7 +2,7 @@
 find / \
 -xdev \
 -type f \
--size +15M \
+-size +10M \
 -exec du -sh {} ';' | \
 sort -rh | \
 head -n100
