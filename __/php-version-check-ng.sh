@@ -45,7 +45,7 @@ if \
                     grep "PHP Version" | \
                     head -1 | \
                     sed 's/.*=> //')" \
-                    ' ('"$("$php_prefix"/php/8.5/nts/sbin/php-fpm -i | \
+                    '    ('"$("$php_prefix"/php/8.5/nts/sbin/php-fpm -i | \
                     grep "OpenSSL Library Version" | \
                     sed 's/.*=> //')"')' \
                 ; else \
