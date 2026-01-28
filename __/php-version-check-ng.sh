@@ -22,7 +22,7 @@ if \
                     echo -e '=> PHP 8.5 NTS `php` found.' \
                     && unset \
                     php_thread_safety_bool \
-                    php_thread_safety_status \
+                    php_thread_safety_status_upper \
                     && php_thread_safety_bool="$("$php_prefix"/php/8.5/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
                     && if \
                     [ "$php_thread_safety_bool" = "1" ] \
@@ -31,6 +31,12 @@ if \
                     ; else \
                     php_thread_safety_status_upper="NTS" \
                     ; fi \
+                    && echo -e '    `php`:' \
+                    "$("$php_prefix"/php/8.5/nts/bin/php -r 'echo PHP_VERSION;')" \
+                    '(' \
+                    "$php_thread_safety_status_upper" \
+                    "$("$php_prefix"/php/8.5/nts/bin/php -r 'echo OPENSSL_VERSION_TEXT;')" \
+                    ')' \
                 ; else \
                     echo -e '=> PHP 8.5 NTS `php` NOT found.' \
                 ; fi \
