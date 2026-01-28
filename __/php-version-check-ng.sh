@@ -13,7 +13,7 @@ echo -e '\n=> PHP 8.5 NTS found.' \
 && if \
 [ -f "$php_prefix"/php/8.5/nts/bin/php ] \
 ; then \
-php_thread_safety_check="$("$php_prefix"/php/php/8.5/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
+php_thread_safety_check="$("$php_prefix"/php//8.5/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
 && if \
 [ "$php_thread_safety_check" = "1" ] \
 ; then \
@@ -22,16 +22,16 @@ php_thread_safety_status="(ZTS;" \
 php_thread_safety_status="(NTS;" \
 ; fi \
 && echo -e '    `php`:' \
-"$("$php_prefix"/php/php/8.5/nts/bin/php -r 'echo PHP_VERSION;')" \
+"$("$php_prefix"/php//8.5/nts/bin/php -r 'echo PHP_VERSION;')" \
 "$php_thread_safety_status" \
-"$("$php_prefix"/php/php/8.5/nts/bin/php -r 'echo OPENSSL_VERSION_TEXT;')"')' \
+"$("$php_prefix"/php//8.5/nts/bin/php -r 'echo OPENSSL_VERSION_TEXT;')"')' \
 ; else \
 echo -e '`php` NOT found.' \
 ; fi \
 && if \
 [ -f "$php_prefix"/php/8.5/nts/sbin/php-fpm ] \
 ; then \
-php_thread_safety_check="$("$php_prefix"/php/php/8.5/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
+php_thread_safety_check="$("$php_prefix"/php//8.5/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
 && if \
 [ "$php_thread_safety_check" = "1" ] \
 ; then \
@@ -40,12 +40,12 @@ php_thread_safety_status="(ZTS;" \
 php_thread_safety_status="(NTS;" \
 ; fi \
 && echo -e '`php-fpm`:' \
-"$("$php_prefix"/php/php/8.5/nts/sbin/php-fpm -i | \
+"$("$php_prefix"/php//8.5/nts/sbin/php-fpm -i | \
 grep "PHP Version" | \
 head -1 | \
 sed 's/.*=> //')" \
 "$php_thread_safety_status" \
-"$("$php_prefix"/php/php/8.5/nts/sbin/php-fpm -i | \
+"$("$php_prefix"/php//8.5/nts/sbin/php-fpm -i | \
 grep "OpenSSL Library Version" | \
 sed 's/.*=> //')"')' \
 ; else \
@@ -60,7 +60,7 @@ echo -e '\n=> PHP 8.5 ZTS found.' \
 && if \
 [ -f "$php_prefix"/php/8.5/zts/bin/php ] \
 ; then \
-php_thread_safety_check="$("$php_prefix"/php/php/8.5/zts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
+php_thread_safety_check="$("$php_prefix"/php//8.5/zts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
 && if \
 [ "$php_thread_safety_check" = "1" ] \
 ; then \
@@ -69,16 +69,16 @@ php_thread_safety_status="(ZTS;" \
 php_thread_safety_status="(NTS;" \
 ; fi \
 && echo -e '    `php`:' \
-"$("$php_prefix"/php/php/8.5/zts/bin/php -r 'echo PHP_VERSION;')" \
+"$("$php_prefix"/php//8.5/zts/bin/php -r 'echo PHP_VERSION;')" \
 "$php_thread_safety_status" \
-"$("$php_prefix"/php/php/8.5/zts/bin/php -r 'echo OPENSSL_VERSION_TEXT;')"')' \
+"$("$php_prefix"/php//8.5/zts/bin/php -r 'echo OPENSSL_VERSION_TEXT;')"')' \
 ; else \
 echo -e '`php` NOT found.' \
 ; fi \
 && if \
 [ -f "$php_prefix"/php/8.5/zts/sbin/php-fpm ] \
 ; then \
-php_thread_safety_check="$("$php_prefix"/php/php/8.5/zts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
+php_thread_safety_check="$("$php_prefix"/php//8.5/zts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
 && if \
 [ "$php_thread_safety_check" = "1" ] \
 ; then \
@@ -87,12 +87,12 @@ php_thread_safety_status="(ZTS;" \
 php_thread_safety_status="(NTS;" \
 ; fi \
 && echo -e '`php-fpm`:' \
-"$("$php_prefix"/php/php/8.5/zts/sbin/php-fpm -i | \
+"$("$php_prefix"/php//8.5/zts/sbin/php-fpm -i | \
 grep "PHP Version" | \
 head -1 | \
 sed 's/.*=> //')" \
 "$php_thread_safety_status" \
-"$("$php_prefix"/php/php/8.5/zts/sbin/php-fpm -i | \
+"$("$php_prefix"/php//8.5/zts/sbin/php-fpm -i | \
 grep "OpenSSL Library Version" | \
 sed 's/.*=> //')"')' \
 ; else \
@@ -107,7 +107,7 @@ echo -e '\n=> PHP 8.5 found.' \
 && if \
 [ -f "$php_prefix"/php/8.5/bin/php ] \
 ; then \
-php_thread_safety_check="$("$php_prefix"/php/php/8.5/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
+php_thread_safety_check="$("$php_prefix"/php//8.5/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
 && if \
 [ "$php_thread_safety_check" = "1" ] \
 ; then \
@@ -116,16 +116,16 @@ php_thread_safety_status="(ZTS;" \
 php_thread_safety_status="(NTS;" \
 ; fi \
 && echo -e '    `php`:' \
-"$("$php_prefix"/php/php/8.5/bin/php -r 'echo PHP_VERSION;')" \
+"$("$php_prefix"/php//8.5/bin/php -r 'echo PHP_VERSION;')" \
 "$php_thread_safety_status" \
-"$("$php_prefix"/php/php/8.5/bin/php -r 'echo OPENSSL_VERSION_TEXT;')"')' \
+"$("$php_prefix"/php//8.5/bin/php -r 'echo OPENSSL_VERSION_TEXT;')"')' \
 ; else \
 echo -e '`php` NOT found.' \
 ; fi \
 && if \
 [ -f "$php_prefix"/php/8.5/sbin/php-fpm ] \
 ; then \
-php_thread_safety_check="$("$php_prefix"/php/php/8.5/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
+php_thread_safety_check="$("$php_prefix"/php//8.5/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
 && if \
 [ "$php_thread_safety_check" = "1" ] \
 ; then \
@@ -134,12 +134,12 @@ php_thread_safety_status="(ZTS;" \
 php_thread_safety_status="(NTS;" \
 ; fi \
 && echo -e '`php-fpm`:' \
-"$("$php_prefix"/php/php/8.5/sbin/php-fpm -i | \
+"$("$php_prefix"/php//8.5/sbin/php-fpm -i | \
 grep "PHP Version" | \
 head -1 | \
 sed 's/.*=> //')" \
 "$php_thread_safety_status" \
-"$("$php_prefix"/php/php/8.5/sbin/php-fpm -i | \
+"$("$php_prefix"/php//8.5/sbin/php-fpm -i | \
 grep "OpenSSL Library Version" | \
 sed 's/.*=> //')"')' \
 ; else \
