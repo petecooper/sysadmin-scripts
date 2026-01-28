@@ -47,16 +47,16 @@ if \
                     && if \
                         [ -f /run/php/php/8.5/nts/php-php-fpm85nts.pid ] \
                     ; then \
-                        echo -e '.pid found.' \
+                        echo -e '`php-fpm`: .pid found.' \
                     ; else \
-                        echo -e '.pid NOT found.' \
+                        echo -e '`php-fpm`: .pid NOT found.' \
                     ; fi \
                     && if \
                         [ -S /run/php/php/8.5/nts/php-php-fpm85nts.sock ] \
                     ; then \
-                        echo -e '.sock found.' \
+                        echo -e '`php-fpm`: .sock found.' \
                     ; else \
-                        echo -e '.sock NOT found.' \
+                        echo -e '`php-fpm`: .sock NOT found.' \
                     ; fi \
                 ; else \
                     echo -e '=> PHP 8.5 NTS scaffold found; `php-fpm` NOT found.' \
