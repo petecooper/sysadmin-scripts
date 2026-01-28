@@ -31,6 +31,9 @@ if \
                     && echo -e '    `php`:' \
                     "$("$php_prefix"/php/8.5/nts/bin/php -r 'echo PHP_VERSION;')" \
                     '('"$php_thread_safety_status_upper"'; '"$("$php_prefix"/php/8.5/nts/bin/php -r 'echo OPENSSL_VERSION_TEXT;')"')' \
+                    && unset \
+                    php_thread_safety_bool \
+                    php_thread_safety_status_upper \
                 ; else \
                     echo -e '=> PHP 8.5 NTS scaffold found; `php` NOT found.' \
                 ; fi \
@@ -84,6 +87,9 @@ if \
                     && echo -e '    `php`:' \
                     "$("$php_prefix"/php/8.5/zts/bin/php -r 'echo PHP_VERSION;')" \
                     '('"$php_thread_safety_status_upper"'; '"$("$php_prefix"/php/8.5/zts/bin/php -r 'echo OPENSSL_VERSION_TEXT;')"')' \
+                    && unset \
+                    php_thread_safety_bool \
+                    php_thread_safety_status_upper \
                 ; else \
                     echo -e '=> PHP 8.5 NTS scaffold found; `php` NOT found.' \
                 ; fi \
