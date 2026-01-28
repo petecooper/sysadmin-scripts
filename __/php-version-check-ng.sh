@@ -1,6 +1,6 @@
 #!/bin/bash
 if \
-[[ -f /etc/php-prefix ]] \
+[[ -f /etc/php-php-prefix ]] \
 ; then \
 php_prefix="$(< /etc/php-prefix)" \
 && if \
