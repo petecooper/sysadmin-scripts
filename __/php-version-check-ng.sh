@@ -40,6 +40,15 @@ if \
                     [ -f "$php_prefix"/php/8.5/nts/sbin/php-fpm ] \
                 ; then \
                     echo -e '=> PHP 8.5 NTS `php-fpm` found.' \
+                    && echo -e '`php-fpm`:' \
+                    "$("$php_prefix"/php/8.5/nts/sbin/php-fpm -i | \
+                    grep "PHP Version" | \
+                    head -1 | \
+                    sed 's/.*=> //')" \
+                    "$php_thread_safety_status_upper" \
+                    "$("$php_prefix"/php/8.5/nts/sbin/php-fpm -i | \
+                    grep "OpenSSL Library Version" | \
+                    sed 's/.*=> //')"')' \
                 ; else \
                     echo -e '=> PHP 8.5 NTS `php-fpm` NOT found.' \
                 ; fi \
