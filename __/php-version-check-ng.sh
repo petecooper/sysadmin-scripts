@@ -12,6 +12,11 @@ if \
             [ -d "$php_prefix"/php/8.5/ ] \
         ; then \
             echo -e '=> PHP 8.5 scaffold found.' \
+            && if \
+                [ -d "$php_prefix"/php/8.5/nts ] \
+            ; then \
+                echo -e '=> PHP 8.5 NTS scaffold found.' \
+            ; fi \
         ; fi \
     ; else \
         echo -e '=> PHP prefix dir NOT found.' \
