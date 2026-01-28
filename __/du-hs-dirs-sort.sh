@@ -4,4 +4,3 @@ find . \
 -type d \
 -exec du -hs {} ';' | \
 sort -rh
-
