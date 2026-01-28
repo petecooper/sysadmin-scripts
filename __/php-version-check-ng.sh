@@ -16,6 +16,13 @@ if \
                 [ -d "$php_prefix"/php/8.5/nts ] \
             ; then \
                 echo -e '=> PHP 8.5 NTS scaffold found.' \
+                && if \
+                    [ -f "$php_prefix"/php/8.5/nts/bin/php ] \
+                ; then \
+                    echo -e '=> PHP 8.5 NTS `php` found.' \
+                ; else \
+                    echo -e '=> PHP 8.5 NTS `php` NOT found.' \
+                ; fi \
             ; fi \
         ; fi \
     ; else \
