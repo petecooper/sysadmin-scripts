@@ -36,6 +36,13 @@ if \
                 ; else \
                     echo -e '=> PHP 8.5 NTS `php` NOT found.' \
                 ; fi \
+                && if \
+                    [ -f "$php_prefix"/php/8.5/nts/sbin/php-fpm ] \
+                ; then \
+                    echo -e '=> PHP 8.5 NTS `php-fpm` found.' \
+                ; else \
+                    echo -e '=> PHP 8.5 NTS `php-fpm` NOT found.' \
+                ; fi \
             ; fi \
         ; fi \
     ; else \
