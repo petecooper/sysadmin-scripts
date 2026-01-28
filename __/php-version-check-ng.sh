@@ -9,7 +9,7 @@ if \
         if \
             [ -d "$php_prefix"/php/8.5/ ] \
         ; then \
-            echo -e '=>    PHP:  8.5' \
+            echo -e '=>    PHP: 8.5' \
             && if \
                 [ -d "$php_prefix"/php/8.5/nts ] \
             ; then \
