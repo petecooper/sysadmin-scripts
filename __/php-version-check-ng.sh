@@ -43,6 +43,7 @@ if \
                 grep "PHP Version" | \
                 head -1 | \
                 sed 's/.*=> //')" \
+                "$php_thread_safety_status" \
                 "$("$php_prefix"/php/8.5/nts/sbin/php-fpm -i | \
                 grep "OpenSSL Library Version" | \
                 sed 's/.*=> //')"')' \
