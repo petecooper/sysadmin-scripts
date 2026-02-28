@@ -110,13 +110,16 @@ libprotobuf-dev \
 libpsl-dev \
 librdmacm-dev \
 libsasl2-dev \
+libsasl2-modules-gssapi-mit \
 libsodium-dev \
 libspng-dev \
 libsqlite3-dev \
 libssh-dev \
 libssl-dev \
 libsystemd-dev \
+libtirpc-dev \
 libtool \
+libudev-dev \
 libuv1-dev \
 libwebp-dev \
 libxslt1-dev \
@@ -124,6 +127,7 @@ libyaml-dev \
 libzip-dev \
 libzstd-dev \
 llvm \
+llvm-dev \
 locate \
 lrzip \
 lz4 \
