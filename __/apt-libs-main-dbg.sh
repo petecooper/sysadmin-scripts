@@ -153,6 +153,7 @@ python3-docutils \
 python3-git \
 python3-semantic-version \
 python3-sphinx \
+rdap \
 re2c \
 rsync \
 scons \
