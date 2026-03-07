@@ -1,3 +1,3 @@
 # sysadmin-scripts
 
-Caveat emptor. No warranty.
+Caveat emptor. No warranty. See LICENCE.
