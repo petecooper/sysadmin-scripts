@@ -158,6 +158,7 @@ re2c \
 rsync \
 scons \
 screen \
+sqlite3 \
 swig \
 tuned \
 unzip \
