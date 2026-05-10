@@ -63,6 +63,7 @@ libcap-ng-dev \
 libcfitsio-dev \
 libcgif-dev \
 libcurl4-openssl-dev \
+libdeflate-dev \
 libedit-dev \
 libelf-dev \
 libev-dev \
