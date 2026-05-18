@@ -5,4 +5,4 @@ find / \
 -size +10M \
 -exec du -sh {} ';' | \
 sort -rh | \
-head -n200
+head -n25
