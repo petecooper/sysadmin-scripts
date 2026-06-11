@@ -1,8 +1,9 @@
 #!/bin/bash
-find / \
+echo -e 'Starting `find`...' \
+&& find / \
 -xdev \
 -type f \
 -size +10M \
 -exec du -sh {} ';' | \
 sort -rh | \
-head -n25
+head -n40
