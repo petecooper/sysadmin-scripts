@@ -51,14 +51,14 @@ if \
                     && if \
                         [ -f /run/php/php/8.5/nts/php-php-fpm85nts.pid ] \
                     ; then \
-                        echo -e '`php-fpm`: .pid found.' \
+                        echo -e '`php-fpm`: .pid found (`/run/php/php/8.5/nts/`).' \
                     ; else \
                         echo -e '`php-fpm`: .pid NOT found.' \
                     ; fi \
                     && if \
                         [ -S /run/php/php/8.5/nts/php-php-fpm85nts.sock ] \
                     ; then \
-                        echo -e '`php-fpm`: .sock found.' \
+                        echo -e '`php-fpm`: .sock found (`/run/php/php/8.5/nts/`).' \
                     ; else \
                         echo -e '`php-fpm`: .sock NOT found.' \
                     ; fi \
@@ -107,14 +107,14 @@ if \
                     && if \
                         [ -f /run/php/php/8.5/zts/php-php-fpm85nts.pid ] \
                     ; then \
-                        echo -e '`php-fpm`: .pid found.' \
+                        echo -e '`php-fpm`: .pid found (`/run/php/php/8.5/zts/`).' \
                     ; else \
                         echo -e '`php-fpm`: .pid NOT found.' \
                     ; fi \
                     && if \
                         [ -S /run/php/php/8.5/zts/php-php-fpm85nts.sock ] \
                     ; then \
-                        echo -e '`php-fpm`: .sock found.' \
+                        echo -e '`php-fpm`: .sock found (`/run/php/php/8.5/zts/`).' \
                     ; else \
                         echo -e '`php-fpm`: .sock NOT found.' \
                     ; fi \
