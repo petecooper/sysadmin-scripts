@@ -35,7 +35,7 @@ if \
                     php_thread_safety_bool \
                     php_thread_safety_status_upper \
                 ; else \
-                    echo -e '=> PHP 8.5 NTS scaffold found; `php` NOT found.' \
+                    echo -e '=> PHP 8.5 NTS scaffold found; `php` NOT found' \
                 ; fi \
                 && if \
                     [ -f "$php_prefix"/php/8.5/nts/sbin/php-fpm ] \
@@ -51,19 +51,19 @@ if \
                     && if \
                         [ -f /run/php/php/8.5/nts/php-php-fpm85nts.pid ] \
                     ; then \
-                        echo -e '`php-fpm`: .pid found  (`/run/php/php/8.5/nts/`).' \
+                        echo -e '`php-fpm`: .pid found  (`/run/php/php/8.5/nts/`)' \
                     ; else \
-                        echo -e '`php-fpm`: .pid NOT found.' \
+                        echo -e '`php-fpm`: .pid NOT found' \
                     ; fi \
                     && if \
                         [ -S /run/php/php/8.5/nts/php-php-fpm85nts.sock ] \
                     ; then \
-                        echo -e '`php-fpm`: .sock found (`/run/php/php/8.5/nts/`).' \
+                        echo -e '`php-fpm`: .sock found (`/run/php/php/8.5/nts/`)' \
                     ; else \
-                        echo -e '`php-fpm`: .sock NOT found.' \
+                        echo -e '`php-fpm`: .sock NOT found' \
                     ; fi \
                 ; else \
-                    echo -e '=> PHP 8.5 NTS scaffold found; `php-fpm` NOT found.' \
+                    echo -e '=> PHP 8.5 NTS scaffold found; `php-fpm` NOT found' \
                 ; fi \
             ; fi \
             && if \
@@ -91,7 +91,7 @@ if \
                     php_thread_safety_bool \
                     php_thread_safety_status_upper \
                 ; else \
-                    echo -e '=> PHP 8.5 NTS scaffold found; `php` NOT found.' \
+                    echo -e '=> PHP 8.5 NTS scaffold found; `php` NOT found' \
                 ; fi \
                 && if \
                     [ -f "$php_prefix"/php/8.5/zts/sbin/php-fpm ] \
@@ -109,23 +109,23 @@ if \
                     ; then \
                         echo -e '`php-fpm`: .pid found (`/run/php/php/8.5/zts/`).' \
                     ; else \
-                        echo -e '`php-fpm`: .pid NOT found.' \
+                        echo -e '`php-fpm`: .pid NOT found' \
                     ; fi \
                     && if \
                         [ -S /run/php/php/8.5/zts/php-php-fpm85nts.sock ] \
                     ; then \
                         echo -e '`php-fpm`: .sock found (`/run/php/php/8.5/zts/`).' \
                     ; else \
-                        echo -e '`php-fpm`: .sock NOT found.' \
+                        echo -e '`php-fpm`: .sock NOT found' \
                     ; fi \
                 ; else \
-                    echo -e '=> PHP 8.5 NTS scaffold found; `php-fpm` NOT found.' \
+                    echo -e '=> PHP 8.5 NTS scaffold found; `php-fpm` NOT found' \
                 ; fi \
             ; fi \
         ; fi \
     ; else \
-        echo -e '=> PHP prefix dir NOT found.' \
+        echo -e '=> PHP prefix dir NOT found' \
     ; fi \
 ; else \
-    echo -e '`=> /etc/php-php-prefix` NOT found.' \
+    echo -e '`=> /etc/php-php-prefix` NOT found' \
 ; fi
