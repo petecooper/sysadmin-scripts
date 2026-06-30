@@ -4,6 +4,151 @@ if \
 ; then \
 php_prefix="$(< /etc/php-prefix)" \
 && if \
+[ -d "$php_prefix"/php/8.6/ ] || [ -d "$php_prefix"/php/8.6/nts/ ]|| [ -d "$php_prefix"/php/8.6/zts/ ] \
+; then \
+if \
+[ -d "$php_prefix"/php/8.6/nts/bin/ ] \
+; then \
+echo -e '\n=> PHP 8.6 NTS found.' \
+&& if \
+[ -f "$php_prefix"/php/8.6/nts/bin/php ] \
+; then \
+php_thread_safety_check="$("$php_prefix"/php/8.6/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" \
+; fi \
+&& echo -e '    `php`:' \
+"$("$php_prefix"/php/8.6/nts/bin/php -r 'echo PHP_VERSION;')" \
+"$php_thread_safety_status" \
+"$("$php_prefix"/php/8.6/nts/bin/php -r 'echo OPENSSL_VERSION_TEXT;')"')' \
+; else \
+echo -e '`php` NOT found.' \
+; fi \
+&& if \
+[ -f "$php_prefix"/php/8.6/nts/sbin/php-fpm ] \
+; then \
+php_thread_safety_check="$("$php_prefix"/php/8.6/nts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" \
+; fi \
+&& echo -e '`php-fpm`:' \
+"$("$php_prefix"/php/8.6/nts/sbin/php-fpm -i | \
+grep "PHP Version" | \
+head -1 | \
+sed 's/.*=> //')" \
+"$php_thread_safety_status" \
+"$("$php_prefix"/php/8.6/nts/sbin/php-fpm -i | \
+grep "OpenSSL Library Version" | \
+sed 's/.*=> //')"')' \
+; else \
+echo -e '`php-fpm` NOT found.' \
+; fi \
+&& echo '=> PHP 8.6 NTS socket checks (todo).' \
+; fi \
+&& if \
+[ -d "$php_prefix"/php/8.6/zts/bin/ ] \
+; then \
+echo -e '\n=> PHP 8.6 ZTS found.' \
+&& if \
+[ -f "$php_prefix"/php/8.6/zts/bin/php ] \
+; then \
+php_thread_safety_check="$("$php_prefix"/php/8.6/zts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" \
+; fi \
+&& echo -e '    `php`:' \
+"$("$php_prefix"/php/8.6/zts/bin/php -r 'echo PHP_VERSION;')" \
+"$php_thread_safety_status" \
+"$("$php_prefix"/php/8.6/zts/bin/php -r 'echo OPENSSL_VERSION_TEXT;')"')' \
+; else \
+echo -e '`php` NOT found.' \
+; fi \
+&& if \
+[ -f "$php_prefix"/php/8.6/zts/sbin/php-fpm ] \
+; then \
+php_thread_safety_check="$("$php_prefix"/php/8.6/zts/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" \
+; fi \
+&& echo -e '`php-fpm`:' \
+"$("$php_prefix"/php/8.6/zts/sbin/php-fpm -i | \
+grep "PHP Version" | \
+head -1 | \
+sed 's/.*=> //')" \
+"$php_thread_safety_status" \
+"$("$php_prefix"/php/8.6/zts/sbin/php-fpm -i | \
+grep "OpenSSL Library Version" | \
+sed 's/.*=> //')"')' \
+; else \
+echo -e '`php-fpm` NOT found.' \
+; fi \
+&& echo '=> PHP 8.6 ZTS socket checks (todo).' \
+; fi \
+&& if \
+[ -d "$php_prefix"/php/8.6/bin/ ] \
+; then \
+echo -e '\n=> PHP 8.6 found.' \
+&& if \
+[ -f "$php_prefix"/php/8.6/bin/php ] \
+; then \
+php_thread_safety_check="$("$php_prefix"/php/8.6/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" \
+; fi \
+&& echo -e '    `php`:' \
+"$("$php_prefix"/php/8.6/bin/php -r 'echo PHP_VERSION;')" \
+"$php_thread_safety_status" \
+"$("$php_prefix"/php/8.6/bin/php -r 'echo OPENSSL_VERSION_TEXT;')"')' \
+; else \
+echo -e '`php` NOT found.' \
+; fi \
+&& if \
+[ -f "$php_prefix"/php/8.6/sbin/php-fpm ] \
+; then \
+php_thread_safety_check="$("$php_prefix"/php/8.6/bin/php -r 'echo ZEND_THREAD_SAFE;')" \
+&& if \
+[ "$php_thread_safety_check" = "1" ] \
+; then \
+php_thread_safety_status="(ZTS;" \
+; else \
+php_thread_safety_status="(NTS;" \
+; fi \
+&& echo -e '`php-fpm`:' \
+"$("$php_prefix"/php/8.6/sbin/php-fpm -i | \
+grep "PHP Version" | \
+head -1 | \
+sed 's/.*=> //')" \
+"$php_thread_safety_status" \
+"$("$php_prefix"/php/8.6/sbin/php-fpm -i | \
+grep "OpenSSL Library Version" | \
+sed 's/.*=> //')"')' \
+; else \
+echo -e '`php-fpm` NOT found.' \
+; fi \
+&& echo '=> PHP 8.6 socket checks (todo).' \
+; fi \
+; fi \
+&& if \
 [ -d "$php_prefix"/php/8.5/ ] || [ -d "$php_prefix"/php/8.5/nts/ ]|| [ -d "$php_prefix"/php/8.5/zts/ ] \
 ; then \
 if \
